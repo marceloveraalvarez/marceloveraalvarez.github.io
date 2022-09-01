@@ -1,0 +1,69 @@
+---
+title: "Entrega N°1 - Análisis de Datos"
+author: "Marcelo Vera Álvarez"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Pregunta de investigación**
+
+¿Las democracias mayoritarias son más proclives a vulnerar derechos individuales que las democracias consensuales?
+
+**Justificación de la pregunta de investigación**
+
+Las democracias liberales contemporáneas se nutren de distintas fuentes normativas, algunas de ellas en aparente tensión. Un ejemplo de esta tensión es la relación entre la soberanía popular y los derechos de los individuos. El liberalismo clásico desconfía de la coerción que una mayoría puede ejercer sobre una minoría (Mill, 2003) y de la pérdida de libertades del individuo ante el cuerpo ciudadano (Constant, 2017). Esta línea de pensamiento es profundizada por la tradición federalista y la necesidad de idear un diseño institucional de frenos y contrapesos que modere el ejercicio del poder político al fragmentarlo en diferentes intereses que deban dialogar entre sí para ejercer un curso de acción política (Hamilton, Madison & Jay, 2009).
+
+La tensión entre el principio mayoritario de la soberanía popular y un sistema contramayoritario de frenos y contrapesos para evitar el abuso de poder y proteger los derechos de las personas da lugar a dos formas distintas de entender la democracia. Arend Lijphart (1999) distingue entre modelo de democracia mayoritario y modelo consensual. El modelo mayoritario organiza las instituciones y el proceso de toma de decisiones para fomentar la fluidez del sistema político y la respuesta directa al principio de mayoría. Por otra parte, el modelo consensual hace énfasis en la necesidad de ir más allá de la mayoría numérica y reunir el mayor consenso posible para la toma de una decisión. Este tipo de sistemas dispersan el poder y hacen necesarios grandes acuerdos para la toma de decisiones.
+
+De acuerdo a la teoría liberal-republicana del gobierno democrático, un modelo mayoritario será más proclive a la tiranía de la mayoría y la vulneración de derechos individuales. En cambio, un modelo consensual debería moderar estas tendencias. Por consiguiente, desarrollamos la siguiente hipótesis:
+
+**Hipótesis**
+
+H0: Las democracias mayoritarias tienden a vulnerar los derechos individuales en mayor medida que las democracias consensuales.
+
+H1: Las democracias mayoritarias no tienden a vulnerar los derechos individuales en mayor medida que las democracias consensuales.
+
+**Variables independientes**
+
+En base a la dimensión ejecutivo-partido y la dimensión unitaria-federal de Lijphart (1999) se utilizan las siguientes variables para la construcción de un índice mayoritario:
+
++ Concentración del Poder Ejecutivo: Variable dummy que toma valor 0 cuando se tiene un gabinete de partido único y 1 cuando el gabinete es una coalición multipartidista.
+
++ Relaciones Ejecutivo-Legislativo: Variable dummy que toma valor 0 cuando el poder ejecutivo tiene poderes formales que le permiten dominar al poder legislativo y 1 cuando es débil en comparación.
+
++ Sistema de Partidos: Variable dummy que toma valor 0 cuando el sistema de partidos es bicameral y 1 cuando consiste en 3 o más partidos.
+
++ Sistema Electoral: Variable dummy que toma valor 0 cuando el sistema es mayoritario y 1 cuando es de representación proporcional
+
++ Grupos de interés: Variable dummy que toma valor 0 cuando predominan grupos de mayoría relativa con libre competencia entre ellos y 1 cuando predominan grupos coorporativistas organizados en torno a un compromiso gremial.
+
++ Organización del Estado: Variable dummy que toma valor 0 cuando el Estado es unitario y 1 cuando es federal.
+
++ Bicameralismo: Variable dummy que toma valor 0 cuando el parlamento se organiza en una cámara y 1 cuando se organiza en dos.
+
++ Rigidez constitucional: Variable dummy que toma valor 0 cuando la Constitución tiene cláusulas de reforma flexibles por mayoría de los miembros en la (o las) cámaras legislativas y 1 cuando exige quórums de supramayoría.
+
++ Control constitucional: Variable dummy que toma valor 0 cuando no existe un órgano diferente de la Legislatura para evaluar la constitucionalidad de las leyes y 1 cuando sí existe.
+
++ Banco Central: Variable dummy que toma valor 0 cuando el Banco Central depende del Poder Ejecutivo y 1 cuando es independiente.
+
+
+**Variables de control**
+
++ Es posible que se agreguen variables de control a la base como el PIB per cápita u otras.
+
+**Variable independiente**
+
++ Derechos fundamentales: Se utiliza el índice Fundamental Rigths del World Justice Project Rule of Law Index. Es una variable contínua donde 0 significa una débil adhesión al estado de derecho y 1 significa una fuerte.
+
+**Referencias bibliográficas**
+
++ Constant, B. (2017). The Liberty of the Ancients Compared with that of the Moderns
++ Hamilton, A., Madison, J. & Jay, J. (2009). The Federalist Papers. Palgrave Macmillan.
++ Lijphart, A. (1999). Patterns of Democracy: Government Forms and Performance in Thirty-Six Countries. Yale University Press.
++ Mill, J. S. (2003). On liberty. Yale University Press.
++ World Justice Project. (2022). Rule of Law Index. Recuperado de: https://worldjusticeproject.org/
