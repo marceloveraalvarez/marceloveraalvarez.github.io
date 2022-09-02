@@ -1,0 +1,104 @@
+---
+title: "Tarea Clase 01 de Septiembre"
+description: |
+  Clase Medición y Análisis Dimensional de Datos Políticos.
+author:
+  - name: Marcelo Vera Álvarez
+    url: https://marceloveraalvarez.github.io/
+date: 2022-09-01
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Tarea
+
+Una de las formas de aprender a usar R, es simplemente aprender a buscar lo que necesitamos usar. Algunos de las funciones las hemos visto en clases, pero siempre pueden buscar otras formas de lograr los mismos resultados.
+
+Con los materiales que hemos visto, vamos a realizar gráficos exploratorios:
+
+Carga de bases de datos:
+
+```{r}
+library(tidyverse)
+vdem <- readRDS("vdem_subset.rds")
+```
+
+### Histograma
+
+```{r}
+vdem %>% 
+  ggplot(mapping = aes(v2x_partipdem)) +
+  geom_histogram(binwidth = 0.05, col="black",fill="lightblue") +
+  theme_bw() +
+  labs(title = "Gráfico 1. Dispersión según nivel de democracia participativa",
+       x = "Frecuencia",
+       y = "Índice de Democracia Participativa V-DEM",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).")
+```
+
+### Gráfico de barras
+
+```{r}
+vdem %>% 
+  ggplot(mapping = aes(as.factor(e_regionpol))) +
+  geom_bar(col="black",fill="lightblue") +
+  theme_bw() +
+  labs(title = "Gráfico 2. Dispersión geográfica",
+       x = "Frecuencia",
+       y = "",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).") +
+  scale_x_discrete(labels = c("Europa del Este",
+                              "Latinoamérica",
+                              "África del Norte\n y Medio Este",
+                              "Africa Subsahariana",
+                              "Europa Oeste\nNorteamérica",
+                              "Asia del Este",
+                              "Asia Sureste",
+                              "Asia del Sur",
+                              "Pacífico",
+                              "Caribe")) +
+  theme(axis.text.x = element_text(angle=90))
+```
+
+### Boxplot
+
+```{r}
+vdem %>% 
+  ggplot(mapping = aes(fct_reorder(as.factor(e_regionpol), e_gdppc), e_gdppc)) +
+  geom_boxplot() +
+  theme_bw() +
+  labs(title = "Gráfico 3. PIB per cápita según ubicación geográfica",
+       y = "PIB per cápita",
+       x = "",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).") +
+  scale_x_discrete(labels = c("Europa del Este",
+                              "Latinoamérica",
+                              "África del Norte\n y Medio Este",
+                              "Africa Subsahariana",
+                              "Europa Oeste\nNorteamérica",
+                              "Asia del Este",
+                              "Asia Sureste",
+                              "Asia del Sur",
+                              "Pacífico",
+                              "Caribe")) +
+  theme(axis.text.x = element_text(angle=90))
+  
+```
+
+### Scatterplot
+
+```{r}
+vdem %>% 
+  ggplot(mapping = aes(log(e_pop), v2x_partipdem)) +
+  geom_point(col="darkblue",alpha=0.3) +
+  theme_bw() +
+  labs(title = "Gráfico 4. Niveles de democracia participativa según población",
+       x = "Población (Escala logarítmica)",
+       y = "Índice de Democracia Participativa V-DEM",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).")
+```
+
