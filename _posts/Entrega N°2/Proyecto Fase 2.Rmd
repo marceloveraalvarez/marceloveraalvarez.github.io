@@ -310,9 +310,13 @@ write.csv(base, "base_democracias.csv",row.names=F)
 
 
 **Referencias bibliográficas**
+
 + Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Ryden, Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning, Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig, Steven Wilson and Daniel Ziblatt. 2022. VDem [Country–Year/Country–Date] Dataset v12” Varieties of Democracy (V-Dem) Project. https://doi.org/10.23696/vdemds22.
+
 + Garriga, A. (2016). "CBI dataset Garriga.tab", Central Bank Independence in the World: A New Data Set, https://doi.org/10.7910/DVN/I2BUGZ/GGGHAT, Harvard Dataverse, V1, UNF:6:du50AImDO8u88GajlEJ/RA== [fileUNF]
+
 + Lijphart, A. (1999). Patterns of Democracy: Government Forms and Performance in Thirty-Six Countries. Yale University Press.
+
 + World Development Indicators. (2022). Washington, D.C.:The World Bank.
 
 
