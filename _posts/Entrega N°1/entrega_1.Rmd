@@ -4,11 +4,11 @@ description: |
   Entrega N°1 Medición y Análisis Dimensional de Datos Políticos.
 author:
   - name: Marcelo Vera Álvarez
-    url: http://analisisdimensionaldedatos2022github.io/
+    url: https://marceloveraalvarez.github.io/
 date: 2022-08-31
 output:
   distill::distill_article:
-    self_contained: true
+    self_contained: false
 editor_options: 
   chunk_output_type: console
 ---
