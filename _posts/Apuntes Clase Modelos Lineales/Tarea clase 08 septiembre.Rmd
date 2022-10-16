@@ -1,0 +1,125 @@
+---
+title: "Tarea 2"
+author: Marcelo Vera Álvarez
+date: 08-09-2022
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(stargazer)
+library(car)
+
+vdem <- read_rds("vdem_subset8s.rds")
+```
+
+
+Hipótesis: La distribución del poder económico se relaciona con altos niveles de democracia participativa porque amplios sectores de la sociedad son incluídos en la toma de decisiones al tener capacidad de negociación con otros grupos de altos ingresos. En cambio, la concentración del poder económico se relaciona con exclusión de los miembros menos favorecidos de la sociedad.
+
+Modelo simple: 
+
+$$Modelo\ 1: Índice \ VDem\ Democracia\ Participativa  = \alpha +\beta_1*Log(PIB\ per\ cápita)$$
+
+Es decir:
+
+$$Modelo\ 1: v2x\_partipdem = \alpha + \beta_1*Log(e\_gdppc)$$
+
+```{r}
+modelo_1 <- lm(v2x_partipdem ~ log(e_gdppc), vdem)
+
+stargazer(modelo_1,
+          type = "text",
+          covariate.labels = c("Log PIB per cápita", "Intercepto"),
+          dep.var.labels = "Democracia Participativa",
+          dep.var.caption = "Modelo OLS 1")
+```
+
+Modelo lineal multiple:
+
+Hipótesis: La concentración del poder en una sociedad se relaciona con sus niveles de democracia participativa. Sociedades con élites que concentran el poder y excluyen a otros sectores de la sociedad deben tener bajos niveles de democracia participativa. En cambio, la distribución del poder permite a los grupos capacidad de negociación con élites.
+
+Variable independiente: v2x_partipdem: Democracia participativa
+
+Variables dependientes
+
++ PIB per cápita: Se espera que a mayor PIB per cápita exista mayor empoderamiento de diversos sectores de la sociedad y favorezca positivamente la democracia participativa.
+
++ e_peedgini: Se espera que una educación igualitaria permite equidad en las capacidades de las personas para negociar unas con otras y su interés por la democracia, lo que aumente los niveles de democracia participativa.
+
++ v2psprlnks: Se espera que vínculos clientelistas de los partidos desmovilizen a su electorado para capturar una base de apoyo, en cambio, vínculos programáticos favorecen la participación organizada para una democracia participativa.
+
+$$Modelo\ 2: Y = Índice \ VDem\ Democracia\ Participativa  = \alpha +\beta_1*Log(PIB\ per\ cápita) + \beta_2*Gini\ Educación + \beta_3*Vínculos\ Partidistas$$
+
+Es decir,
+
+$$Modelo\ 2: Y = v2x\_partipdem  = \alpha +\beta_1*Log(e\_gdppc) + \beta_2*e\_peedgini + \beta_3*v2psprlnks$$
+
+
+```{r}
+
+modelo_2 <- lm(v2x_partipdem~ log(e_gdppc) + e_peedgini + v2psprlnks, vdem)
+stargazer(modelo_2,
+          type = "text",
+          dep.var.caption = "Modelo OLS 2",
+          covariate.labels = c("PIB per cápita",
+                               "Gini Educación", 
+                               "Vínculos Partidos",
+                               "Intercepto"),
+          dep.var.labels = "Democracia Participativa")
+```
+
+Evaluación de supuestos:
+
+**Colinealidad**: No existen relaciones fuertes entre nuestras variables independientes.
+
+```{r}
+library(ggcorrplot)
+
+corr_vdem <- vdem %>% 
+  select(5,6,13) %>% 
+  cor(use="pairwise") %>% 
+  round(2)
+
+ggcorrplot(corr_vdem, type = "lower",lab=T, show.legend = F)
+
+```
+
+**Tamaño muestral elevado**: La regresión opera con 11.597 observaciones.
+
+**Linealidad de los parámetros**: 
+
+```{r}
+valores_ajustados <- fitted(modelo_2)
+residuales <- residuals(modelo_2)
+
+ggplot(modelo_2, mapping = aes(valores_ajustados,residuales)) +
+  geom_point(alpha = 0.3) +
+  labs(title = "Supuesto 1. Prueba de Linealidad",
+       x = "Valores predichos",
+       y = "Residuales",
+       caption = "Elaboración propia en base a V-Dem (2022)") +
+  geom_hline(yintercept = 0, linetype="dashed", col="red") +
+  theme_bw()
+```
+Hay un patrón extraño en la prueba de linealidad de los parámetros, puede tratarse un modelo que considere los vínculos partidarios y la distribución del poder económico como efectos fijos.
+
+**Aditividad**: Nuestras variables pueden sumarse entre sí.
+
+**Normalidad**: Hay una distribución aproximadamente normal de los residuos.
+
+```{r}
+ggplot(modelo_2, aes(x = residuales)) +
+  geom_histogram(bins = 15, fill="lightblue", col="black") +
+  geom_density() +
+  labs(x= "Residuos", y = "Frecuencia") +
+  theme_bw()
+```
+
+**Heterocedasticidad**: Se incumplen los supuestos de heterocesticidad
+
+```{r}
+residualPlot(modelo_2)
+```
+
+
+
