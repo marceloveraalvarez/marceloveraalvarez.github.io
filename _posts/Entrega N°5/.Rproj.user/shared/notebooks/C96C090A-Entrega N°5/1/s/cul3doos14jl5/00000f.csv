@@ -1,0 +1,3 @@
+"0","mols_2 <- lm(v2xcl_rol ~ v2x_feduni + v2x_divparctrl + v2lgbicam +"
+"0","               v2jureview + e_v2xlg_legcon_5c + lvaw_garriga + v2csstruc_2 + log(gdp_per_capita_constant_2015_us) + log(population_total), base)"
+"0",""
