@@ -23,7 +23,7 @@ El presente documento es una exposición de un proyecto de investigación desple
 
 La pregunta de investigación que guió la investigación fue si las democracias mayoritarias tendían a vulnerar derechos individuales en mayor medida que las democracias consensuales. Se desprenden de esta pregunta principal una serie de cuestiones relevantes ¿Las instituciones consensuales tienen más chances de generar democracias de alta calidad? ¿Las democracias mayoritarias tienden a un plazo de vida más corto antes de sufrir erosión democrática? En lo siguiente intento hacerme cargo de todas estas dudas.
 
-La idea de estudiar los modelos de democracia y sus efectos viene de los diferentes componentes normativos que componen lo que hoy conocemos como democracias representativas. En teoría política, se detectan contribuciones importantes del liberalismo y el republicanismo, pero también de la soberanía popular (Held, 1987). No siempre es fácil conciliar las implicaciones de tales diversas fuentes. Considérese la doctrina de soberanía popular y su relación con los derechos de los individuos. Para la teoría liberal clásica, siempre habrá una desconfianza por la coerción que una mayoría puede ejercer sobre una minoría. La función del poder político es la seguridad del ser humano respecto a otros, pero también respecto al propio Estado (Shklar, 1989). Estas aprehensiones son profundizadas por la tradición federalista y la necesidad de idear un diseño institucional de frenos y contrapesos que modere el ejercicio del poder político al fragmentarlo en diferentes intereses que deban dialogar entre sí para ejercer un curso de acción política (Hamilton, Madison & Jay, 2009).
+La idea de estudiar los modelos de democracia y sus efectos viene de los diferentes componentes normativos que componen lo que hoy conocemos como democracias representativas. En teoría política, se detectan contribuciones importantes del liberalismo y el republicanismo, pero también de la soberanía popular (Held, 1987). No siempre es fácil conciliar las implicaciones de tales diversas fuentes. Considérese la doctrina de soberanía popular y su relación con los derechos de los individuos. Para la teoría liberal clásica, siempre habrá una desconfianza por la coerción que una mayoría puede ejercer sobre una minoría. La función del poder político es la seguridad del ser humano respecto a otros, pero también respecto al propio Estado (Shklar, 2018). Estas aprehensiones son profundizadas por la tradición federalista y la necesidad de idear un diseño institucional de frenos y contrapesos que modere el ejercicio del poder político al fragmentarlo en diferentes intereses que deban dialogar entre sí para ejercer un curso de acción política (Hamilton, Madison & Jay, 2009).
 
 El principio democrático en torno al cuál un Estado organiza sus instituciones da lugar a distintas organizaciones políticas. Arend Lijphart (1999) parte de este hecho para distinguir entre modelos de democracia mayoritarios y modelos consensuales. El modelo mayoritario organiza las instituciones y el proceso de toma de decisiones para fomentar la fluidez del sistema político y la respuesta directa al principio de mayoría. Por otra parte, el modelo consensual hace énfasis en la necesidad de ir más allá de la mayoría numérica y reunir el mayor consenso posible para la toma de una decisión. Este tipo de sistemas dispersan el poder y hacen necesarios grandes acuerdos para la toma de decisiones. De acuerdo a la teoría liberal-republicana del gobierno democrático, un modelo mayoritario será más proclive a la tiranía de la mayoría y la vulneración de derechos individuales. En cambio, un modelo consensual debería moderar estas tendencias. En base a esto se desarrolla la siguiente hipótesis guía:
 
@@ -1103,7 +1103,7 @@ Los resultados del test revelan un valor de R2 pequeño, pero más que predecir 
 
 ### CONCLUSIONES
 
-En este proyecto se propuso estudiar los alcances de los modelos de democracia mayoritarios y consensuales en distintos aspectos relacionados con la calidad de las democracias. De acuerdo a la tradición liberal y republicana de la teoría política, existe una tensión constante entre la soberanía popular y los derechos de las personas (Held, 1987). Uno puede extender esta tensión a la elección de un modelo mayoritario o consensual. En los primeros la toma de decisiones sigue el principio mayoritario simple, en cambio, el segundo exige la construcción de una mayoría lo más alto posible y pone límites más exigentes a la soberanía popular (Lijphart, 1999). Ambas son formas de entender la democracia, no obstante, el consensualismo expresa la desconfianza y los riesgos que minorías pueden sufrir por una mayoría. Estas aprehensiones están en el corazón de aquello que Shklar (1989) ha denominado el liberalismo del miedo de autores como John Stuart Mill (2003) o Benjamin Constant (2017). Los autores federalista, asociados al republicanismo, se nutren de esta tradición para la propuesta de un diseño de frenos y contrapesos que fragmenta y divide el poder político en maximizando el número de intereses que deben dialogar entre sí para tomar una decisión vinculante (Hamilton, Madison & Jay, 2009).
+En este proyecto se propuso estudiar los alcances de los modelos de democracia mayoritarios y consensuales en distintos aspectos relacionados con la calidad de las democracias. De acuerdo a la tradición liberal y republicana de la teoría política, existe una tensión constante entre la soberanía popular y los derechos de las personas (Held, 1987). Uno puede extender esta tensión a la elección de un modelo mayoritario o consensual. En los primeros la toma de decisiones sigue el principio mayoritario simple, en cambio, el segundo exige la construcción de una mayoría lo más alto posible y pone límites más exigentes a la soberanía popular (Lijphart, 1999). Ambas son formas de entender la democracia, no obstante, el consensualismo expresa la desconfianza y los riesgos que minorías pueden sufrir por una mayoría. Estas aprehensiones están en el corazón de aquello que Shklar (2018) ha denominado el liberalismo del miedo de autores como John Stuart Mill (2003) o Benjamin Constant (2017). Los autores federalista, asociados al republicanismo, se nutren de esta tradición para la propuesta de un diseño de frenos y contrapesos que fragmenta y divide el poder político en maximizando el número de intereses que deben dialogar entre sí para tomar una decisión vinculante (Hamilton, Madison & Jay, 2009).
 
 
 La distinción entre modelos de democracia mayoritarios y consensuales nos permite poner a prueba estas ideas. El modelo mayoritario organiza las instituciones y el proceso de toma de decisiones para fomentar la fluidez del sistema político y la respuesta directa al principio de mayoría. Por otra parte, el modelo consensual hace énfasis en la necesidad de ir más allá de la mayoría numérica y reunir el mayor consenso posible para la toma de una decisión. Este tipo de sistemas dispersan el poder y hacen necesarios grandes acuerdos para la toma de decisiones. De acuerdo a la teoría liberal-republicana del gobierno democrático, un modelo mayoritario será más proclive a la tiranía de la mayoría y la vulneración de derechos individuales. En cambio, un modelo consensual debería moderar estas tendencias. 
@@ -1111,6 +1111,383 @@ La distinción entre modelos de democracia mayoritarios y consensuales nos permi
 Los modelos lineales analizados en el proyecto descartan la existencia de diferencias significativas en este respecto. Las democracias mayoritarias no tienden a vulnerar los derechos individuales en mayor medida que las democracias consensuales, no obstante, en contextos de baja democratización las instituciones consensuales pueden proteger los derechos de las personas de mejor manera. Esto abre la duda sobre qué tipo de modelo institucional suele originar democracias liberales con más probabilidad. Los modelos logísticos sugieren que algunas instituciones consensuales como la autonomía de los poderes locales y la independencia del banco central tienden a incrementar las posibilidades de una democracia de alta calidad. Por último, debido a los procesos de erosión democrática en el mundo, nos preguntamos si la durabilidad de los modelos consensuales era mayor que la de los mayoritarios. Al respecto, los modelos de supervivencia no revelaron variables significativas.
 
 En base a los datos de este estudio se puede concluir que las democracias mayoritarias no tienden a violar los derechos con mayor frecuencia que las democracias consensuales. No obstante, algunos elementos de las democracias consensuales tienen más posibilidades de originar democracias liberales las instituciones mayoritarias. Por último, las democracias mayoritarias no tienden a una menor durabilidad hasta la erosión democrática que las democracias consensuales. Sin embargo, este estudio enfrenta algunas limitaicones que deben enfrentarse en trabajos posteriores. En especial, podría extenderse el análisis temporal considerando períodos anteriores en 1990 y dividiendo según olas de democratización qué efectos tienen las variables institucionales en los destinos que los regímenes políticos enfrentan. Por otro lado, la selección de variables puede ampliarse para considerar otras dimensiones del mayoritarismo o consensualismo además de las teorizadas por V-DEM (Coopedge et al., 2022). El estudio de la democracia aún tiene mucho que aportar a la construcción de diseños institucionales que permitan un equilibrio entre soberanía popular y derechos de las personas (vease el reciente trabajo de Bernaert, Blanckaert y Caluwaert, 2022). La construcción de una teoría política normativa amparada en los hallazgos de la realidad es una tarea que no debe descuidarse.
+
+### ANEXO 1. BASE DE DATOS DE LIJPHART Y ANÁLISIS DE CLUSTER
+
+### Introducción
+
+El propósito de este anexo es replicar nuestro modelo lineal con los datos de Lijphart (1999). Para esto utilizamos la base replicada por Eggers (2022):
+
+```{r}
+library(countrycode)
+lp <- read_csv("lijphart.csv")
+```
+
+
+### BASE DE DATOS
+
+Para la presente replicación utilizaré los datos desde 1981 a 2010 porque captan gran parte de la tercera ola de democratización y cubre el período de tiempo más cercano a nuestros modelos originiales.
+
+```{r}
+lp2 <- lp %>% 
+  select(country, contains("1981_2010"), index_of_central_bank_independence_1981_1994)
+```
+
+Las variables que me interesan son:
+
+**Dimensión Ejecutivo-Partidos**
+
++ Porcentaje de gabinetes de partido mínimos (pct_minimal_winning_one_party_cabinet_1981_2010)
+
++ Índice de dominancia del poder ejecutivo (index_of_exec_dominance_1981_2010)
+
++ Número efectivo de partidos (eff_num_parl_parties_1981_2020)
+
++ Proporcionalidad del sistema electoral (index_of_disproportionality_1981_2010)
+
++ index_of_interest_group_pluralism_1981_2010
+
+
+**Dimensión Federal-Unitaria**
+
++ Federalismo (index_of_federalims_1981_2010)
+
++ Bicameralismo (index_of_bicameralism_1981_2010)
+
++ Rigidez constitucional (index_of_const_rigidity_1981_2010)
+
++ Revisión judicial (index_of_judicial_review_1981_2010)
+
++ Independencia del Banco Central (index_of_central_bank_independence_1981_1994)
+
+Procederé a renombrar las variables para hacer más sencillo su estudio.
+
+```{r}
+lp2 <- lp2 %>% 
+  rename(dom_ejecutivo = index_of_exec_dominance_1981_2010,
+         gabinete_min_pct = pct_minimal_winning_one_party_cabinet_1981_2010,
+         nep = eff_num_parl_parties_1981_2010,
+         proporcionalidad = index_of_disproportionality_1981_2010,
+         ind_cso = index_of_interest_group_pluralism_1981_2010,
+         federalismo = index_of_federalism_1981_2010,
+         bicameralismo = index_of_bicameralism_1981_2010,
+         rigidez_cp = index_of_const_rigidity_1981_2010,
+         jureview = index_of_judicial_review_1981_2010,
+         cbi = index_of_central_bank_independence_1981_1994)
+
+country_name <- c("Argentina", "Australia", "Austria","Bahrain", "Barbados", "Belgium","Botswana", "Canada","Costa Rica","Denmark","Finland",
+                  "France","Germany","Greece","Iceland","India","Ireland","Israel","Italy","Jamaica","Japan",
+                  "South Korea","Luxembourg","Malaysia","Mauritius","Netherlands","Norway",
+                  "New Zealand","Portugal","Spain","Sweden","Switzerland","Trinidad & Tobago","United Kingdom","Uruguay","United States of America")
+
+lp2$country_name <- country_name
+
+lp2 <- lp2 %>% select(country_name, everything())
+
+lp2 <- lp2 %>% 
+  mutate(COWcode = countrycode(lp2$country_name, origin = "country.name", destination = "cown"))
+```
+
+Complementaré esta base con las variables del Índice de Derechos y Libertades Individuales, la estimación del PIB per cápita anual y el Índice de Democracia Liberal de V-DEM (Coppedge et al., 2022):
+
+```{r}
+vd <- read_csv("v-dem.csv")
+
+vd <- vd %>% 
+  select(COWcode, year, v2x_libdem, v2xcl_rol, e_gdppc) %>% 
+  filter(year > 1980 & year <= 2010) %>% 
+  filter(COWcode %in% lp2$COWcode)
+
+vd <- vd %>% 
+  group_by(COWcode) %>% 
+  summarize(v2x_libdem = mean(v2x_libdem, na.rm = T),
+               v2xcl_rol = mean(v2xcl_rol, na.rm = T),
+               e_gdppc = mean(e_gdppc, na.rm = T))
+
+lp2 <- left_join(lp2, vd, by = "COWcode")
+
+rm(vd)
+
+lp2 <- lp2 %>% 
+  select(country_name, country, COWcode, exec_parties_1981_2010:jureview, cbi, v2x_libdem, v2xcl_rol, e_gdppc)
+
+write.csv(lp2, "base_lijphart.csv", row.names = F)
+```
+
+En base a estos datos podemos trabajar replicando modelos.
+
+### ESTADÍSTICA DESCRIPTIVA
+
+El propósito de esta sección es generar estadísticas de resumen de nuestras variables y brindar una descripción de su distribución univariada. La función skimr entrega un resumen de las variables de nuestra base de datos indicando número de valores perdidos, media, desviación estándar, percentiles y un histograma de distribución. Cada una de las variables se analizará en detalle en la siguiente sección.
+
+```{r}
+skim(round(lp2[6:18],2))
+```
+
+Al analizar las relaciones entre variables en una matriz scatterplot y de correlaciones obtenemos:
+
+```{r}
+pairs(lp2[c(6:15,17)], upper.panel = NULL)
+```
+Al observar los gráficos de dispersión de la variable Índice de Derechos y Libertades Individuales (v2xcl_rol), a partir de ahora IDLI, no encontramos correlaciones evidentes.
+
+```{r}
+mtz <- lp2[c(6:15,17)]
+
+mtz <- cor(mtz, use = "everything") %>% 
+  round(., 2)
+
+corrplot(mtz,
+         method = "shade",
+         shade.col = NA,
+         tl.col = "black",
+         tl.srt = 35,
+        addCoef.col = "black",
+        order = "AOE",
+        number.cex = 0.5)
+
+```
+
+### MODELOS
+
+**Modelos Lineales**
+
+La idea del modelo original es probar si existe una relación entre el diseño mayoritario-consensual de una democracia y el respeto por los derechos y libertades de las personas medidas en IDLI. Realizaremos una tabla comparativa de los siguientes modelos:
+
+*Modelo Lineal 1*
+
+Nuestro modelo original considera los índices de dispersión del poder federal (federal_unitry_1981_2010) y del control partidario en la relación Ejecutivo-Partidos (exec_parties_1981_2010). La razón es que ambos índices fueron construídos por V-Dem (2022) con el propósito de emular el estudio de Lijphart (1999) sobre modelos de democracia.
+
+Nuestra variable será dependiente para estos modelos será el Índice de Igualdad ante la Ley y Derechos Individuales (v2xcl_rol), abreviado como IDLI.
+
+Nuestras variables independientes serán abreviadas respectivamente como FedUni y CtrlPart.
+
+$$IDLI = \beta_0 + \beta_1FedUni + \beta_2CtrlPart + \mu $$
+*Modelo Lineal 2*
+
+Este modelo descompone los índices de Lijphart y testea sus elementos por separado. Consideraremos:
+
++ Porcentaje de gabinetes de partido mínimos (pct_minimal_winning_one_party_cabinet_1981_2010)
+
++ Índice de dominancia del poder ejecutivo (index_of_exec_dominance_1981_2010)
+
++ Número efectivo de partidos (eff_num_parl_parties_1981_2020)
+
++ Proporcionalidad del sistema electoral (index_of_disproportionality_1981_2010)
+
++ index_of_interest_group_pluralism_1981_2010
+
+
++ Federalismo (index_of_federalims_1981_2010)
+
++ Bicameralismo (index_of_bicameralism_1981_2010)
+
++ Rigidez constitucional (index_of_const_rigidity_1981_2010)
+
++ Revisión judicial (index_of_judicial_review_1981_2010)
+
++ Independencia del Banco Central (index_of_central_bank_independence_1981_1994)
+
+$$ILDI = \beta_0 + \beta_1Nep + \beta_2ColMin + \beta_3DomEjec + \beta_4Prop + \beta_5CSO + \beta_6Fed+\beta_7Bicameralismo\\+ \beta_8RigConst + \beta_9Jureview+\beta_{10}CBI +\mu $$
+
+*Modelo Lineal 3*
+
+Este modelo añade el PIB per cápita como variable de control. El propósito es controlar por nivel de ingreso de un país siguiendo los estudios clásicos de Przeworski y Limongi (1997) sobre democracia y desarrollo.
+
+$$ILDI = \beta_0 + \beta_1Nep + \beta_2ColMin + \beta_3DomEjec + \beta_4Prop + \beta_5CSO + \beta_6Fed+\beta_7Bicameralismo\\+ \beta_8RigConst + \beta_9Jureview+\beta_{10}CBI + \beta_{11}PIB +\mu $$
+
+*Comparación de Modelos*
+
+```{r}
+modelo_original <- lm(v2xcl_rol ~ federal_unitry_1981_2010 + exec_parties_1981_2010, lp2)
+
+modelo_1 <- lm(v2xcl_rol ~ nep + gabinete_min_pct + dom_ejecutivo + proporcionalidad + ind_cso + federalismo +
+                        bicameralismo + rigidez_cp + jureview + cbi, lp2)
+
+modelo_2 <- lm(v2xcl_rol ~ nep + gabinete_min_pct + dom_ejecutivo + proporcionalidad + ind_cso + federalismo +
+                        bicameralismo + rigidez_cp + jureview + cbi + log(e_gdppc), lp2)
+
+stargazer(modelo_original, modelo_1, modelo_2, 
+          type = "text",
+          dep.var.caption = c("Modelos OLS"),
+          dep.var.labels = c("Índice Derechos y Libertades Individuales"),
+          intercept.bottom = F,
+          covariate.labels = c("Intercepto", "FedUni", "CtrlPart", 
+                               "Nep","ColMin","DomEjec","Prop","CSO","Fed","Bicameralismo","RigConst","Jureview","CBI","PIB"))
+
+```
+
+El modelo simple tiene un ajuste R2 muy bajo y su significancia estadística conjunta apenas pasa la prueba. En él se aprecia que la dispersión del poder político, medido en la dimensión Ejecutivo-Partido, tiende a favorecer altos niveles de IDLI. Sin embargo, al descomponer los índices en sus elementos particulares esta significancia estadística se pierde. En particular, el modelo 2 tiene un ajuste muy bajo y el R2 del modelo 3 también. Ninguno de estos dos últimos supera la prueba de significancia estadísticas conjunta, lo que debe tenerse en cuenta al momento de interpretarlos. No obstante, al igual que los modelos presentados en el Proyecto de investigación, dan cuenta de que no parecen existir diferencias significativas en el diseño democrático mayoritario o consensual a la hora de respeter los derechos y libertades individuales cuando evaluamos democracias.
+
+**Modelo Logístico**
+
+Acorde al proyecto de investigación original, estudiaremos la relación entre los arregos institucionales de una democracia mayoritaria o consensual y la calidad de la democracia medida en el índice de democracia liberal de V-DEM. Consideraré una democracia de calidad una que supere el umbral de 0.8 en el Índice de Democracia Liberal de V-DEM (Coppedge et al., 2022). 
+
+```{r}
+lp2 <- lp2 %>%
+  mutate(libdem = if_else(v2x_libdem >= 0.8, 1, 0))
+```
+
+Consideremos p es la probabilidad de éxito de que una democracia supere el umbral de 0.8 en el Índice de Democracia Liberal de V-Dem. Siendo este el caso, seguimos la fórmula del modelo de regresión logística:
+
+$$ln(odds)=ln(\frac{p}{1-p})$$
+
+En este modelo:
+
+$$logit^{-1}(\alpha) = \frac{1}{1+e^\alpha} = \frac{e^\alpha}{1+e^\alpha}$$
+
+Siendo $\alpha$ una combinación lineal de variables independientes y coeficientes que en nuestro caso está dada por:
+
+$$\alpha =  \beta_0 + \beta_1Nep + \beta_2ColMin + \beta_3DomEjec + \beta_4Prop + \beta_5CSO + \beta_6Fed+\beta_7Bicameralismo\\+ \beta_8RigConst + \beta_9Jureview+\beta_{10}CBI + \beta_{11}PIB +\mu$$
+
+```{r}
+logit <- glm(libdem ~ nep + gabinete_min_pct + dom_ejecutivo + proporcionalidad + ind_cso + federalismo +
+                        bicameralismo + rigidez_cp + jureview + cbi + log(e_gdppc), lp2,  family = binomial("logit"))
+
+stargazer(logit,
+          type = "text",
+          dep.var.caption = "Modelos Logit",
+          dep.var.labels = "Democracia Liberal",
+          intercept.bottom = FALSE, 
+          covariate.labels = c("Intercepto", "Nep","ColMin","DomEjec","Prop","CSO","Fed","Bicameralismo","RigConst","Jureview","CBI","PIB"))
+```
+
+El modelo en cuestión tampoco revela ninguna relación estadísticamente significativa. Sin embargo, estos resultados deben tomarse con cautela debido a la existencia de pocas observaciones en la base. Un proyecto a largo plazo aumentaría el número de observaciones, ya sea añadiendo más países al conjunto original de datos o desagregando por año las unidades disponibles.
+
+
+
+### ANÁLISIS DE CLUSTER
+
+Para concluir, haremos uso de un modelo de aprendizaje automático para clasificar clusters en la base de datos de Lijphart (1999) a partir del algoritmo de K-Medias. Este algortimo agrupa las observaciones en clusters homogéneos respecto de sí y heterogéneos respecto a los demás (Universidad de Cincinatti, 2022). Comenzaremos con el cálculo de una matriz de distancias euclidianas:
+
+$$d_{euc}(x,y) = \sqrt{\sum^n_{i=1}(x_i - y_i)^2}$$
+
+```{r}
+lp_cluster <- lp2[6:15]
+lp_cluster <- scale(lp_cluster)
+distancia <- get_dist(lp_cluster)
+fviz_dist(distancia)
+```
+La matriz de distancias parece revalar la existencia de 2 grupos con distancias marcadas entre sí, lo que es coherente con la tipificación de los modelos de democracia de Lijphart en consensuales o mayoritarios. Para testear esto, usaremos el algortimo de K-Medias dado por:
+
+$$W(C_k) = \sum_{x_i \in C_k}(x_i - \mu_k)^2$$
+
+Esta fórmula calcula un centro, el valor observado al que tienden las observaciones en un cluster, y compara la distancia de cada observación en el conglomerado con ese centro. Se espera minimizar esta distancia tanto como sea posible. La variación total al interior de cada cluster nos ayuda a calcular qué tan compactos son estos (Universidad de Cincinatti, 2022), se hace con la fórmula:
+
+$$tot.withiness = \sum^k_{k=1}W(C_k) = \sum^k_{k=1}\sum_{x_i \in C_k}(x_i - \mu_k)^2$$
+
+Al poner en práctica estos algoritmos con un tamaño K de clusters igual a dos y 25 iteraciones tenemos que:
+
+```{r}
+set.seed(101)
+cluster <- kmeans(lp_cluster, centers = 2, nstart = 25)
+cluster
+```
+
+Se generaron dos grupos con tamaño 20 y 16 con un ratio de 29.9% en la variación entre clusters y la variación total. Al visualizar en un gráfico a partir de dos componentes principales que el algoritmo genera empleando Análisis de Componentes Principales obtenemos que:
+
+```{r}
+fviz_cluster(cluster, data = lp_cluster)
+```
+Los grupos son lo suficientemente heterogéneos entre sí, a pesar de que existe varianza en su interior. Al estudiar cómo estas dimensiones principales se componen encontramos que:
+
+```{r}
+set.seed(101)
+lp_pca <- lp2[6:15]
+pca <- PCA(lp_pca)
+summary(pca, loadings = T, cutoff = 0.3)
+```
+
+Al observar los Eigenvalor de cada dimensión encontramos que la primera y la segunda son las únicas con puntajes superiores a uno. Entre las dos, explican un 65.82% de la varianza, siendo la primera la que mayor relevancia tiene (39.99%) sobre la segunda (28.83%). 
+
+```{r}
+fviz_eig(pca, addlabels = T, ylim = c(0, 50))
+```
+
+Al examinar los componentes de cada dimensión:
+
+**Dimensión 1**
+
+```{r}
+fviz_contrib(pca, choice = "var", axes = 1)
+```
+
+Podemos notar que este componente se nutre del porcentaje de gabinetes de partido único, el número de partidos políticos en el parlamento, la estructura de las organizaciones de la sociedad civil, el dominio del ejecutivo sobre el legislativo y la proporcionalidad del sistema electoral. Es decir, los cinco elementos de la dimensión Ejecutivo-Partidos de Lijphart (1999).
+
+
+**Dimensión 2**
+
+```{r}
+fviz_contrib(pca, choice = "var", axes = 2)
+```
+
+En este caso, la segunda dimensión se nutre del federalismo, el bicameralismo, la rigidez constitucional, la fortaleza del órgano de revisión judicial y la independencia del banco central. Estos elementos son también los componentes de la dimensión Federal-Unitaria de Lijphart (1999).
+
+En base a esto podemos concluir que dos clusters reflejan bien el comportamiento de los datos de la base, pero podemos testear esta suposición empleando el método silhouette:
+
+```{r}
+fviz_nbclust(lp_cluster, kmeans, method = "silhouette")
+
+```
+El méotodo silhouette indica que tres grupos maximizarían la potencia del análisis. Esto tiene sentido, al ser el eje mayoritario-consensual un continuo, tres clusters podrían capturar casos grises:
+
+```{r}
+set.seed(101)
+cluster_alt <- kmeans(lp_cluster, centers = 3, nstart = 25)
+cluster_alt
+```
+
+Se construyen grupos de 8, 16 y 12. Debe notarse que el ratio de la variación dentro del grupo y entre los grupos ha aumentado. Esto es una buena noticia, al examinar en un mapa la conformación de los grupos observamos que los 3 clusters siguen diferenciándose claramente:
+
+```{r}
+fviz_cluster(cluster_alt, data = lp_cluster)
+```
+Procederemos a extraer estos resultados para agregarlos a nuestra base:
+
+```{r}
+lp2 <- lp2 %>%
+  mutate(cluster = cluster_alt$cluster)
+```
+
+Al examinar nuestros clusters tenemos que:
+
+```{r}
+lp2 %>% 
+  select(country_name, cluster) %>% 
+  arrange(cluster)
+```
+
+Suiza, Alemania, India y Austria lideran el cluster 1. Estos regímenes son ejemplos del modelo consensual puro teorizado por Lijphart (1999). No obstante, llama la inclusión la aparación de otros sistemas políticos que no suelen encajar en esta categoría. En particular, debido a la concentración del poder político en el Ejecutivo, llama la atención que Estados Unidos y Australia aparezcan en esta categoría. En base a esto denomino al cluster como Modelos Consensuales.
+
+El cluster 2 tiene regímenes normalmente asociados a modelos consensuales como Bélgica, Japón, Países Bajos y Suecia, pero también se compone de otros como Nueva Zelanda que Lijphart (1999) clasifica como tipos puros de modelos mayoritarios. Defino a este grupo como Modelos Mixtos.
+
+El cluster 3 se nutre de países fuertemente asociados a los modelos mayoritarios como Reino Unido, Barbados, Bahamas, Francia, Grecia, Jamaica y España. Se domina a este cluster Modelos Mayoritarios.
+
+```{r}
+lp2 <- lp2 %>% 
+  mutate(modelos = case_when(cluster == 1 ~ "Consensual",
+                             cluster == 2 ~ "Mixto",
+                             cluster == 3 ~ "Mayoritario"))
+```
+
+Concluyo evaluando la relación entre modelos mayoritarios-mixtos y el respeto por la democracia encontramos que pese a la diferencia de promedios entre modelos puros, no puede hablarse de superioridad de un modelo frente a otro. Al contrario, las concepciones consensuales y mayoritarias de la democracias tienen elementos que pueden nutrir a un sistema democrático funcional y respetuoso de los derechos de las personas ¿Cuáles instituciones adoptar? Es un tema para una investigación futura:
+
+```{r}
+
+lp2 %>% 
+  group_by(modelos) %>% 
+  summarize(mean_idli = mean(v2xcl_rol)) %>% 
+  ggplot(mapping = aes(fct_reorder(modelos, mean_idli), mean_idli)) +
+  geom_col(fill = "lightgrey") +
+  labs(title = "Gráfico 1. Media Índice de Derechos y Libertades Individuales según \nModelos de Democracia (1981-2010).",
+       x = "",
+       y = "Índice de Derechos y Libertades Individuales V-Dem (2022)",
+       caption = "Fuente: Elaboración propia en base a Lijphart (1999), Eggers (2022) y V-Dem (2022).") +
+  theme_bw() +
+  coord_flip()
+```
+
+
 
 ### Referencias Bibliográficas
 
@@ -1122,14 +1499,24 @@ En base a los datos de este estudio se puede concluir que las democracias mayori
 
 + Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Ryden, Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning, Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig, Steven Wilson and Daniel Ziblatt. 2022. VDem [Country–Year/Country–Date] Dataset v12” Varieties of Democracy (V-Dem) Project. https://doi.org/10.23696/vdemds22.
 
++ Eggers, A. (2022). Lijphart Dataset. Recuperado de: https://andy.egge.rs/data.html
+
 + Garriga, A. (2016). "CBI dataset Garriga.tab", Central Bank Independence in the World: A New Data Set, https://doi.org/10.7910/DVN/I2BUGZ/GGGHAT, Harvard Dataverse, V1, UNF:6:du50AImDO8u88GajlEJ/RA== [fileUNF]
 
 + Hamilton, A., Madison, J. & Jay, J. (2009). The Federalist Papers. Palgrave Macmillan.
+
++ Huntington, S. (1991). The Third Wave: Democratization in the Late Twentieth Century. University of Oklahoma Press
+
++ Held, D. (1987). Models of Democracy. Stanford University Press.
 
 + Lijphart, A. (1999). Patterns of Democracy: Government Forms and Performance in Thirty-Six Countries. Yale University Press.
 
 + Mill, J. S. (2003). On liberty. Yale University Press.
 
++ Skhlar, J. (2018). El Liberalismo del Miedo. Herder.
+
 + Smith, P. (2005). Democracy in Latin America. Political Change in Comparative Perspective. Oxford University Press.
+
++ Universidad de Cincinatti. (2022). K-means Cluster Analysis. Recuperado de: https://uc-r.github.io/kmeans_clustering
 
 + Urdinez, F. & Cruz, A. (Eds.). (2021). AnalizaR Datos Políticos. Recuperado de: https://arcruz0.github.io/libroadp/index.html
