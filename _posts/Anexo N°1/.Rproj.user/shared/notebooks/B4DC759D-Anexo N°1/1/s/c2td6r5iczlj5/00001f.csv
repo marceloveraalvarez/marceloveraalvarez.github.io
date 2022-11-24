@@ -1,0 +1,6 @@
+"0","lp2 <- lp2 %>% 
+  round(2)
+"
+"2","Error in Math.data.frame(list(country_name = c(""Argentina"", ""Australia"",  : 
+  non-numeric-alike variable(s) in data frame: country_name, country
+"
