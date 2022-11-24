@@ -1,0 +1,19 @@
+"0","pa <- fa(r = vd2, # Puede ser una base de datos o una matriz de datos."
+"0","         nfactors = 3,"
+"0","         rotate = ""varimax"", # Suele ser la más utilizada"
+"0","         fm = ""paf"", "
+"0","         residuals = T)"
+"2","factor method not specified correctly, minimum residual (unweighted least squares  used
+"
+"0","pa"
+"1","Factor Analysis using method = "
+"1"," "
+"1","minres"
+"1","
+Call: "
+"1","fa(r = vd2, nfactors = 3, rotate = ""varimax"", residuals = T, 
+"
+"1","    fm = ""paf"")
+"
+"1","Standardized loadings (pattern matrix) based upon correlation matrix
+"

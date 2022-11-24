@@ -1,0 +1,32 @@
+"0","columnas <- c(""v2clgencl"",""v2mecenefm"")"
+"0","imput <- mice(vd2[,names(vd2) %in% columnas],m = 1,"
+"0","  maxit = 1, method = ""norm.nob"",seed = 101,print=F)"
+"2","Warning: Number of logged events: 1"
+"0","completo <- complete(imput)"
+"0",""
+"0","vd3 <- vd2"
+"0","vd3$v2clgencl <- completo$v2clgencl"
+"0","vd3$v2mecenefm <- completo$v2clgencl"
+"0",""
+"0","library(skimr)"
+"0","skim(vd3)"
+"1","── Data Summary ────────────────────────
+"
+"1","                           Values
+"
+"1","Name                       vd3   
+"
+"1","Number of rows             19145 
+"
+"1","Number of columns          16    
+"
+"1","_______________________          
+"
+"1","Column type frequency:           
+"
+"1","  numeric                  16    
+"
+"1","________________________         
+"
+"1","Group variables            None  
+"
