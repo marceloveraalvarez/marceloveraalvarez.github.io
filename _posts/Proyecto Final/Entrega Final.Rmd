@@ -5,7 +5,7 @@ description: |
 author:
   - name: Marcelo Vera Álvarez
     url: https://marceloveraalvarez.github.io/
-date: 2022-11-23
+date: 2022-11-24
 output:
   distill::distill_article:
     self_contained: false
@@ -1114,7 +1114,7 @@ En base a los datos de este estudio se puede concluir que las democracias mayori
 
 ### ANEXO 1. BASE DE DATOS DE LIJPHART Y ANÁLISIS DE CLUSTER
 
-### Introducción
+### INTRODUCCIÓN
 
 El propósito de este anexo es replicar nuestro modelo lineal con los datos de Lijphart (1999). Para esto utilizamos la base replicada por Eggers (2022):
 
@@ -1489,11 +1489,11 @@ lp2 %>%
 
 ### ANEXO 2. Índice alternativo de Derechos y Libertades con Análisis Factorial
 
-### Introducción
+### INTRODUCCIÓN
 
 El propósito de este anexo es probar otra medida de derechos individuales y libertades civiles a partir de la base de V-Dem (2022). Esta medida será construída a partir de diferentes indicadores relacionados con los derechos de las personas y se realizará una comparación con el Índice de Libertades y Derechos Individuales (ILDI).
 
-### Base de Datos
+### BASE DE DATOS
 
 Utilizaré la base de V-Dem desarrollada por Coppedge et al. (2022). Me interesan las siguientes variables:
 
