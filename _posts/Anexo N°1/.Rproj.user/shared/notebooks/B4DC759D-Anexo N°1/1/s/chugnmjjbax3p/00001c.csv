@@ -1,6 +1,0 @@
-"0","library(factoextra)"
-"0",""
-"0","lp_cluster <- lp2[6:15]"
-"0","lp_cluster <- scale(lp_cluster)"
-"0","distancia <- get_dist(lp_cluster)"
-"0","fviz_dist(distancia)"

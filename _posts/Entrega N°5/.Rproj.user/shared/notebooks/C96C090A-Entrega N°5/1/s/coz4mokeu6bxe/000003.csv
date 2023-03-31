@@ -1,8 +1,0 @@
-"0","base %>% "
-"0","  ggplot(mapping = aes(v2jureview)) +"
-"0","  geom_histogram(bins = 5, fill=""lightblue"",col=""black"") +"
-"0","  theme_bw() +"
-"0","  labs(title = ""Gráfico 3. Distribución Índice Revisión Judicial"","
-"0","       x = ""Índice Revisión Judicial V-DEM"","
-"0","       y = ""Frecuencia"","
-"0","       caption = ""Fuente: Elaboración propia en base a V-Dem (2022)."")"

@@ -1,2 +1,0 @@
-# marceloveraalvarez.github.io
- blog

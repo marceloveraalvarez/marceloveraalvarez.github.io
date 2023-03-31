@@ -1,6 +1,0 @@
-"0","data_pca <- pca$ind$coord%>%
-"
-"2","Error: unexpected symbol in:
-"" mutate(pca = (Dim.1 * 61.91 + Dim.2 * 37.95)
-data_pca""
-"

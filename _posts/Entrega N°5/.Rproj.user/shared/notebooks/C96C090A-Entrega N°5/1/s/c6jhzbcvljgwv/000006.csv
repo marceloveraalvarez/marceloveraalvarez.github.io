@@ -1,8 +1,0 @@
-"0","base %>% "
-"0","  ggplot(mapping = aes(e_v2xlg_legcon_5c)) +"
-"0","  geom_histogram(bins = 5, fill=""lightblue"",col=""black"") +"
-"0","  theme_bw() +"
-"0","  labs(title = ""Gráfico 2. Distribución Capacidad del Poder Legislativo"","
-"0","       x = ""Índice de Dispersión del Control Legislativo sobre el Ejecutivo V-DEM"","
-"0","       y = ""Frecuencia"","
-"0","       caption = ""Fuente: Elaboración propia en base a V-Dem (2022)."")"

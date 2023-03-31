@@ -1,7 +1,0 @@
-"0","base %>% "
-"0","  ggplot(mapping = aes(v2jureview, v2xcl_rol)) +"
-"0","  geom_point(alpha = 0.3) +"
-"0","  geom_smooth(method = ""lm"", na.rm = T, col=""red"") +"
-"0","  labs(title = ""Gráfico 1. Relación entre Revisión del Poder Judicial e Índice de Igualdad ante la \nLey y Derechos Individuales"","
-"0","       x = ""Fortaleza Revisión Judicial"","
-"0","       y = ""IDLI"")"

@@ -1,5 +1,0 @@
-"0","write_csv(base, ""base_modelos.csv"", row.names = F)
-"
-"2","Error in write_csv(base, ""base_modelos.csv"", row.names = F) : 
-  unused argument (row.names = F)
-"

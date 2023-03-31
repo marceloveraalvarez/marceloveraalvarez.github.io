@@ -1,2 +1,0 @@
-"0","mols_2 <- lm(v2xcl_rol ~ v2x_feduni + v2x_divparctrl + v2lgbicam +"
-"0","               v2jureview + e_v2xlg_legcon_5c + lvaw_garriga + v2csstruc_2 + log(e_gdppc) + log(e_pop), base)"
