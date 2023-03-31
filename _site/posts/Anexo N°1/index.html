@@ -1,0 +1,3336 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>Política y Perspectiva: Anexo N°1 - Base de Datos de Lijphart y Análisis de Cluster</title>
+
+<meta property="description" itemprop="description" content="Anexo N°1 Medición y Análisis Dimensional de Datos Políticos."/>
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2022-11-23"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-11-23"/>
+<meta name="article:author" content="Marcelo Vera Álvarez"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Política y Perspectiva: Anexo N°1 - Base de Datos de Lijphart y Análisis de Cluster"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="Anexo N°1 Medición y Análisis Dimensional de Datos Políticos."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Política y Perspectiva"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Política y Perspectiva: Anexo N°1 - Base de Datos de Lijphart y Análisis de Cluster"/>
+<meta property="twitter:description" content="Anexo N°1 Medición y Análisis Dimensional de Datos Políticos."/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Anexo N°1 - Base de Datos de Lijphart y Análisis de Cluster"]},{"type":"character","attributes":{},"value":["Anexo N°1 Medición y Análisis Dimensional de Datos Políticos."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Marcelo Vera Álvarez"]},{"type":"character","attributes":{},"value":["https://marceloveraalvarez.github.io/"]}]}]},{"type":"character","attributes":{},"value":["2022-11-23"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["Anexo-N°1_files/anchor-4.2.2/anchor.min.js","Anexo-N°1_files/bowser-1.9.3/bowser.min.js","Anexo-N°1_files/distill-2.2.21/template.v2.js","Anexo-N°1_files/figure-html5/unnamed-chunk-11-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-13-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-14-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-14-2.png","Anexo-N°1_files/figure-html5/unnamed-chunk-15-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-16-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-17-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-18-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-20-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-24-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-6-1.png","Anexo-N°1_files/figure-html5/unnamed-chunk-7-1.png","Anexo-N°1_files/header-attrs-2.18/header-attrs.js","Anexo-N°1_files/jquery-3.6.0/jquery-3.6.0.js","Anexo-N°1_files/jquery-3.6.0/jquery-3.6.0.min.js","Anexo-N°1_files/jquery-3.6.0/jquery-3.6.0.min.map","Anexo-N°1_files/popper-2.6.0/popper.min.js","Anexo-N°1_files/tippy-6.2.7/tippy-bundle.umd.min.js","Anexo-N°1_files/tippy-6.2.7/tippy-light-border.css","Anexo-N°1_files/tippy-6.2.7/tippy.css","Anexo-N°1_files/tippy-6.2.7/tippy.umd.min.js","Anexo-N°1_files/webcomponents-2.0.0/webcomponents.js","base_lijphart.csv","lijphart.csv","v-dem.csv"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+  font-size: 100%;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      const citeChild = $(this).children()[0]
+      // Do not process if @xyz has been used without escaping and without bibliography activated
+      // https://github.com/rstudio/distill/issues/466
+      if (citeChild === undefined) return true
+
+      if (citeChild.nodeName == "D-FOOTNOTE") {
+        var fn = citeChild
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.0rem;                     /* edited */
+  --code-size:       0.9rem;                     /* edited */
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --heading-color:   rgba(0, 0, 0, 0.8);
+  --body-color:      #383838;                    /* edited */
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    'Lato', sans-serif;         /* edited */
+  --mono-font:       'Fira Mono', monospace;     /* edited */
+  --body-font:       'Lato', sans-serif;         /* edited */
+  --navbar-font:     'Montserrat', sans-serif;   /* edited */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       20px;                      /* edited */
+  --text-color:       #FFFFFF;                   /* edited */
+  --text-size:        20px;                      /* edited */
+  --hover-color:      #383838;                   /* edited */
+  --bkgd-color:       rgb(249, 83, 85);          /* edited */
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+
+/*-- Additional custom styles --*/
+
+.posts-list .metadata .publishedDate {
+    color: rgb(249, 83, 85);
+}
+
+d-article p code {
+  color: #383838;
+  background: rgba(249, 83, 85, 0.1);
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+d-article a {
+    border-bottom: 2px solid rgba(249, 83, 85, 0.4);
+    text-decoration: none;
+}
+
+.distill-site-header .title {
+    font-weight: 600; 
+}
+
+ul > li::marker {
+  color: rgb(249, 83, 85);
+}</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Anexo N°1 - Base de Datos de Lijphart y Análisis de Cluster","description":"Anexo N°1 Medición y Análisis Dimensional de Datos Políticos.","authors":[{"author":"Marcelo Vera Álvarez","authorURL":"https://marceloveraalvarez.github.io/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-11-23T00:00:00.000-03:00","citationText":"Álvarez, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Política y Perspectiva</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Anexo N°1 - Base de Datos de Lijphart y Análisis de Cluster</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Anexo N°1 Medición y Análisis Dimensional de Datos Políticos.</p></p>
+</div>
+
+<div class="d-byline">
+  Marcelo Vera Álvarez <a href="https://marceloveraalvarez.github.io/" class="uri">https://marceloveraalvarez.github.io/</a> 
+  
+<br/>2022-11-23
+</div>
+
+<div class="d-article">
+<h3 id="introducción">Introducción</h3>
+<p>El propósito de este anexo es replicar nuestro modelo lineal con los datos de Lijphart (1999). Para esto utilizamos la base replicada por Eggers (2022):</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://vincentarelbundock.github.io/countrycode/'>countrycode</a></span><span class='op'>)</span></span>
+<span><span class='va'>lp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"lijphart.csv"</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<h3 id="base-de-datos">BASE DE DATOS</h3>
+<p>Para la presente replicación utilizaré los datos desde 1981 a 2010 porque captan gran parte de la tercera ola de democratización y cubre el período de tiempo más cercano a nuestros modelos originiales.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>country</span>, <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></span><span class='op'>(</span><span class='st'>"1981_2010"</span><span class='op'>)</span>, <span class='va'>index_of_central_bank_independence_1981_1994</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Las variables que me interesan son:</p>
+<p><strong>Dimensión Ejecutivo-Partidos</strong></p>
+<ul>
+<li><p>Porcentaje de gabinetes de partido mínimos (pct_minimal_winning_one_party_cabinet_1981_2010)</p></li>
+<li><p>Índice de dominancia del poder ejecutivo (index_of_exec_dominance_1981_2010)</p></li>
+<li><p>Número efectivo de partidos (eff_num_parl_parties_1981_2020)</p></li>
+<li><p>Proporcionalidad del sistema electoral (index_of_disproportionality_1981_2010)</p></li>
+<li><p>index_of_interest_group_pluralism_1981_2010</p></li>
+</ul>
+<p><strong>Dimensión Federal-Unitaria</strong></p>
+<ul>
+<li><p>Federalismo (index_of_federalims_1981_2010)</p></li>
+<li><p>Bicameralismo (index_of_bicameralism_1981_2010)</p></li>
+<li><p>Rigidez constitucional (index_of_const_rigidity_1981_2010)</p></li>
+<li><p>Revisión judicial (index_of_judicial_review_1981_2010)</p></li>
+<li><p>Independencia del Banco Central (index_of_central_bank_independence_1981_1994)</p></li>
+</ul>
+<p>Procederé a renombrar las variables para hacer más sencillo su estudio.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>dom_ejecutivo <span class='op'>=</span> <span class='va'>index_of_exec_dominance_1981_2010</span>,</span>
+<span>         gabinete_min_pct <span class='op'>=</span> <span class='va'>pct_minimal_winning_one_party_cabinet_1981_2010</span>,</span>
+<span>         nep <span class='op'>=</span> <span class='va'>eff_num_parl_parties_1981_2010</span>,</span>
+<span>         proporcionalidad <span class='op'>=</span> <span class='va'>index_of_disproportionality_1981_2010</span>,</span>
+<span>         ind_cso <span class='op'>=</span> <span class='va'>index_of_interest_group_pluralism_1981_2010</span>,</span>
+<span>         federalismo <span class='op'>=</span> <span class='va'>index_of_federalism_1981_2010</span>,</span>
+<span>         bicameralismo <span class='op'>=</span> <span class='va'>index_of_bicameralism_1981_2010</span>,</span>
+<span>         rigidez_cp <span class='op'>=</span> <span class='va'>index_of_const_rigidity_1981_2010</span>,</span>
+<span>         jureview <span class='op'>=</span> <span class='va'>index_of_judicial_review_1981_2010</span>,</span>
+<span>         cbi <span class='op'>=</span> <span class='va'>index_of_central_bank_independence_1981_1994</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>country_name</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Argentina"</span>, <span class='st'>"Australia"</span>, <span class='st'>"Austria"</span>,<span class='st'>"Bahrain"</span>, <span class='st'>"Barbados"</span>, <span class='st'>"Belgium"</span>,<span class='st'>"Botswana"</span>, <span class='st'>"Canada"</span>,<span class='st'>"Costa Rica"</span>,<span class='st'>"Denmark"</span>,<span class='st'>"Finland"</span>,</span>
+<span>                  <span class='st'>"France"</span>,<span class='st'>"Germany"</span>,<span class='st'>"Greece"</span>,<span class='st'>"Iceland"</span>,<span class='st'>"India"</span>,<span class='st'>"Ireland"</span>,<span class='st'>"Israel"</span>,<span class='st'>"Italy"</span>,<span class='st'>"Jamaica"</span>,<span class='st'>"Japan"</span>,</span>
+<span>                  <span class='st'>"South Korea"</span>,<span class='st'>"Luxembourg"</span>,<span class='st'>"Malaysia"</span>,<span class='st'>"Mauritius"</span>,<span class='st'>"Netherlands"</span>,<span class='st'>"Norway"</span>,</span>
+<span>                  <span class='st'>"New Zealand"</span>,<span class='st'>"Portugal"</span>,<span class='st'>"Spain"</span>,<span class='st'>"Sweden"</span>,<span class='st'>"Switzerland"</span>,<span class='st'>"Trinidad &amp; Tobago"</span>,<span class='st'>"United Kingdom"</span>,<span class='st'>"Uruguay"</span>,<span class='st'>"United States of America"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lp2</span><span class='op'>$</span><span class='va'>country_name</span> <span class='op'>&lt;-</span> <span class='va'>country_name</span></span>
+<span></span>
+<span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>country_name</span>, <span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>COWcode <span class='op'>=</span> <span class='fu'><a href='https://vincentarelbundock.github.io/countrycode/reference/countrycode.html'>countrycode</a></span><span class='op'>(</span><span class='va'>lp2</span><span class='op'>$</span><span class='va'>country_name</span>, origin <span class='op'>=</span> <span class='st'>"country.name"</span>, destination <span class='op'>=</span> <span class='st'>"cown"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Complementaré esta base con las variables del Índice de Derechos y Libertades Individuales, la estimación del PIB per cápita anual y el Índice de Democracia Liberal de V-DEM (Coppedge et al., 2022):</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>vd</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"v-dem.csv"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>vd</span> <span class='op'>&lt;-</span> <span class='va'>vd</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>COWcode</span>, <span class='va'>year</span>, <span class='va'>v2x_libdem</span>, <span class='va'>v2xcl_rol</span>, <span class='va'>e_gdppc</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>year</span> <span class='op'>&gt;</span> <span class='fl'>1980</span> <span class='op'>&amp;</span> <span class='va'>year</span> <span class='op'>&lt;=</span> <span class='fl'>2010</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>COWcode</span> <span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span> <span class='va'>lp2</span><span class='op'>$</span><span class='va'>COWcode</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>vd</span> <span class='op'>&lt;-</span> <span class='va'>vd</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>COWcode</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>v2x_libdem <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>v2x_libdem</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,</span>
+<span>               v2xcl_rol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>v2xcl_rol</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,</span>
+<span>               e_gdppc <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>e_gdppc</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>lp2</span>, <span class='va'>vd</span>, by <span class='op'>=</span> <span class='st'>"COWcode"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>country_name</span>, <span class='va'>country</span>, <span class='va'>COWcode</span>, <span class='va'>exec_parties_1981_2010</span><span class='op'>:</span><span class='va'>jureview</span>, <span class='va'>cbi</span>, <span class='va'>v2x_libdem</span>, <span class='va'>v2xcl_rol</span>, <span class='va'>e_gdppc</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>lp2</span>, <span class='st'>"base_lijphart.csv"</span>, row.names <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>En base a estos datos podemos trabajar replicando modelos.</p>
+<h3 id="estadística-descriptiva">ESTADÍSTICA DESCRIPTIVA</h3>
+<p>El propósito de esta sección es generar estadísticas de resumen de nuestras variables y brindar una descripción de su distribución univariada. La función skimr entrega un resumen de las variables de nuestra base de datos indicando número de valores perdidos, media, desviación estándar, percentiles y un histograma de distribución. Cada una de las variables se analizará en detalle en la siguiente sección.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://docs.ropensci.org/skimr/'>skimr</a></span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://docs.ropensci.org/skimr/reference/skim.html'>skim</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>lp2</span><span class='op'>[</span><span class='fl'>6</span><span class='op'>:</span><span class='fl'>18</span><span class='op'>]</span>,<span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">round(lp2[6:18], 2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 11%" />
+<col style="width: 15%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">nep</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3.36</td>
+<td style="text-align: right;">1.30</td>
+<td style="text-align: right;">1.43</td>
+<td style="text-align: right;">2.36</td>
+<td style="text-align: right;">2.95</td>
+<td style="text-align: right;">4.18</td>
+<td style="text-align: right;">6.13</td>
+<td style="text-align: left;">▇▇▃▂▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gabinete_min_pct</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">57.84</td>
+<td style="text-align: right;">33.40</td>
+<td style="text-align: right;">1.40</td>
+<td style="text-align: right;">35.22</td>
+<td style="text-align: right;">53.10</td>
+<td style="text-align: right;">87.35</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▃▃▅▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dom_ejecutivo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.04</td>
+<td style="text-align: right;">2.57</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.99</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">7.37</td>
+<td style="text-align: right;">9.90</td>
+<td style="text-align: left;">▅▇▂▆▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">proporcionalidad</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8.89</td>
+<td style="text-align: right;">6.38</td>
+<td style="text-align: right;">1.08</td>
+<td style="text-align: right;">3.65</td>
+<td style="text-align: right;">6.58</td>
+<td style="text-align: right;">14.93</td>
+<td style="text-align: right;">21.97</td>
+<td style="text-align: left;">▇▂▂▂▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ind_cso</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.38</td>
+<td style="text-align: right;">1.23</td>
+<td style="text-align: right;">2.16</td>
+<td style="text-align: right;">2.89</td>
+<td style="text-align: right;">3.17</td>
+<td style="text-align: left;">▅▂▂▃▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">federalismo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: right;">1.54</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.50</td>
+<td style="text-align: right;">3.30</td>
+<td style="text-align: right;">5.00</td>
+<td style="text-align: left;">▇▂▁▁▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bicameralismo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.17</td>
+<td style="text-align: right;">1.08</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: left;">▇▃▂▅▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rigidez_cp</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.71</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: left;">▂▅▁▇▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">jureview</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.27</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: left;">▅▇▂▅▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cbi</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0.69</td>
+<td style="text-align: left;">▂▇▆▂▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">v2x_libdem</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.72</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.65</td>
+<td style="text-align: right;">0.78</td>
+<td style="text-align: right;">0.82</td>
+<td style="text-align: right;">0.88</td>
+<td style="text-align: left;">▁▁▁▂▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">v2xcl_rol</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: left;">▁▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">e_gdppc</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">26.16</td>
+<td style="text-align: right;">11.90</td>
+<td style="text-align: right;">2.42</td>
+<td style="text-align: right;">17.70</td>
+<td style="text-align: right;">29.22</td>
+<td style="text-align: right;">34.39</td>
+<td style="text-align: right;">55.06</td>
+<td style="text-align: left;">▅▃▇▅▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Al analizar las relaciones entre variables en una matriz scatterplot y de correlaciones obtenemos:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/pairs.html'>pairs</a></span><span class='op'>(</span><span class='va'>lp2</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>6</span><span class='op'>:</span><span class='fl'>15</span>,<span class='fl'>17</span><span class='op'>)</span><span class='op'>]</span>, upper.panel <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<p>Al observar los gráficos de dispersión de la variable Índice de Derechos y Libertades Individuales (v2xcl_rol), a partir de ahora IDLI, no encontramos correlaciones evidentes.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/taiyun/corrplot'>corrplot</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>mtz</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>6</span><span class='op'>:</span><span class='fl'>15</span>,<span class='fl'>17</span><span class='op'>)</span><span class='op'>]</span></span>
+<span></span>
+<span><span class='va'>mtz</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>mtz</span>, use <span class='op'>=</span> <span class='st'>"everything"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>.</span>, <span class='fl'>2</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/pkg/corrplot/man/corrplot.html'>corrplot</a></span><span class='op'>(</span><span class='va'>mtz</span>,</span>
+<span>         method <span class='op'>=</span> <span class='st'>"shade"</span>,</span>
+<span>         shade.col <span class='op'>=</span> <span class='cn'>NA</span>,</span>
+<span>         tl.col <span class='op'>=</span> <span class='st'>"black"</span>,</span>
+<span>         tl.srt <span class='op'>=</span> <span class='fl'>35</span>,</span>
+<span>        addCoef.col <span class='op'>=</span> <span class='st'>"black"</span>,</span>
+<span>        order <span class='op'>=</span> <span class='st'>"AOE"</span>,</span>
+<span>        number.cex <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<h3 id="modelos">MODELOS</h3>
+<p><strong>Modelos Lineales</strong></p>
+<p>La idea del modelo original es probar si existe una relación entre el diseño mayoritario-consensual de una democracia y el respeto por los derechos y libertades de las personas medidas en IDLI. Realizaremos una tabla comparativa de los siguientes modelos:</p>
+<p><em>Modelo Lineal 1</em></p>
+<p>Nuestro modelo original considera los índices de dispersión del poder federal (federal_unitry_1981_2010) y del control partidario en la relación Ejecutivo-Partidos (exec_parties_1981_2010). La razón es que ambos índices fueron construídos por V-Dem (2022) con el propósito de emular el estudio de Lijphart (1999) sobre modelos de democracia.</p>
+<p>Nuestra variable será dependiente para estos modelos será el Índice de Igualdad ante la Ley y Derechos Individuales (v2xcl_rol), abreviado como IDLI.</p>
+<p>Nuestras variables independientes serán abreviadas respectivamente como FedUni y CtrlPart.</p>
+<p><span class="math display">\[IDLI = \beta_0 + \beta_1FedUni + \beta_2CtrlPart + \mu \]</span>
+<em>Modelo Lineal 2</em></p>
+<p>Este modelo descompone los índices de Lijphart y testea sus elementos por separado. Consideraremos:</p>
+<ul>
+<li><p>Porcentaje de gabinetes de partido mínimos (pct_minimal_winning_one_party_cabinet_1981_2010)</p></li>
+<li><p>Índice de dominancia del poder ejecutivo (index_of_exec_dominance_1981_2010)</p></li>
+<li><p>Número efectivo de partidos (eff_num_parl_parties_1981_2020)</p></li>
+<li><p>Proporcionalidad del sistema electoral (index_of_disproportionality_1981_2010)</p></li>
+<li><p>index_of_interest_group_pluralism_1981_2010</p></li>
+<li><p>Federalismo (index_of_federalims_1981_2010)</p></li>
+<li><p>Bicameralismo (index_of_bicameralism_1981_2010)</p></li>
+<li><p>Rigidez constitucional (index_of_const_rigidity_1981_2010)</p></li>
+<li><p>Revisión judicial (index_of_judicial_review_1981_2010)</p></li>
+<li><p>Independencia del Banco Central (index_of_central_bank_independence_1981_1994)</p></li>
+</ul>
+<p><span class="math display">\[ILDI = \beta_0 + \beta_1Nep + \beta_2ColMin + \beta_3DomEjec + \beta_4Prop + \beta_5CSO + \beta_6Fed+\beta_7Bicameralismo\\+ \beta_8RigConst + \beta_9Jureview+\beta_{10}CBI +\mu \]</span></p>
+<p><em>Modelo Lineal 3</em></p>
+<p>Este modelo añade el PIB per cápita como variable de control. El propósito es controlar por nivel de ingreso de un país siguiendo los estudios clásicos de Przeworski y Limongi (1997) sobre democracia y desarrollo.</p>
+<p><span class="math display">\[ILDI = \beta_0 + \beta_1Nep + \beta_2ColMin + \beta_3DomEjec + \beta_4Prop + \beta_5CSO + \beta_6Fed+\beta_7Bicameralismo\\+ \beta_8RigConst + \beta_9Jureview+\beta_{10}CBI + \beta_{11}PIB +\mu \]</span></p>
+<p><em>Comparación de Modelos</em></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>stargazer</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>modelo_original</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>v2xcl_rol</span> <span class='op'>~</span> <span class='va'>federal_unitry_1981_2010</span> <span class='op'>+</span> <span class='va'>exec_parties_1981_2010</span>, <span class='va'>lp2</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>modelo_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>v2xcl_rol</span> <span class='op'>~</span> <span class='va'>nep</span> <span class='op'>+</span> <span class='va'>gabinete_min_pct</span> <span class='op'>+</span> <span class='va'>dom_ejecutivo</span> <span class='op'>+</span> <span class='va'>proporcionalidad</span> <span class='op'>+</span> <span class='va'>ind_cso</span> <span class='op'>+</span> <span class='va'>federalismo</span> <span class='op'>+</span></span>
+<span>                        <span class='va'>bicameralismo</span> <span class='op'>+</span> <span class='va'>rigidez_cp</span> <span class='op'>+</span> <span class='va'>jureview</span> <span class='op'>+</span> <span class='va'>cbi</span>, <span class='va'>lp2</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>modelo_2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>v2xcl_rol</span> <span class='op'>~</span> <span class='va'>nep</span> <span class='op'>+</span> <span class='va'>gabinete_min_pct</span> <span class='op'>+</span> <span class='va'>dom_ejecutivo</span> <span class='op'>+</span> <span class='va'>proporcionalidad</span> <span class='op'>+</span> <span class='va'>ind_cso</span> <span class='op'>+</span> <span class='va'>federalismo</span> <span class='op'>+</span></span>
+<span>                        <span class='va'>bicameralismo</span> <span class='op'>+</span> <span class='va'>rigidez_cp</span> <span class='op'>+</span> <span class='va'>jureview</span> <span class='op'>+</span> <span class='va'>cbi</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>e_gdppc</span><span class='op'>)</span>, <span class='va'>lp2</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/pkg/stargazer/man/stargazer.html'>stargazer</a></span><span class='op'>(</span><span class='va'>modelo_original</span>, <span class='va'>modelo_1</span>, <span class='va'>modelo_2</span>, </span>
+<span>          type <span class='op'>=</span> <span class='st'>"text"</span>,</span>
+<span>          dep.var.caption <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Modelos OLS"</span><span class='op'>)</span>,</span>
+<span>          dep.var.labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Índice Derechos y Libertades Individuales"</span><span class='op'>)</span>,</span>
+<span>          intercept.bottom <span class='op'>=</span> <span class='cn'>F</span>,</span>
+<span>          covariate.labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Intercepto"</span>, <span class='st'>"FedUni"</span>, <span class='st'>"CtrlPart"</span>, </span>
+<span>                               <span class='st'>"Nep"</span>,<span class='st'>"ColMin"</span>,<span class='st'>"DomEjec"</span>,<span class='st'>"Prop"</span>,<span class='st'>"CSO"</span>,<span class='st'>"Fed"</span>,<span class='st'>"Bicameralismo"</span>,<span class='st'>"RigConst"</span>,<span class='st'>"Jureview"</span>,<span class='st'>"CBI"</span>,<span class='st'>"PIB"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+===============================================================================
+                                            Modelos OLS                        
+                    -----------------------------------------------------------
+                             Índice Derechos y Libertades Individuales         
+                            (1)                 (2)                 (3)        
+-------------------------------------------------------------------------------
+Intercepto               0.918***            1.405***            0.985***      
+                          (0.019)             (0.236)             (0.261)      
+                                                                               
+FedUni                     0.001                                               
+                          (0.020)                                              
+                                                                               
+CtrlPart                  0.046**                                              
+                          (0.020)                                              
+                                                                               
+Nep                                           -0.049              -0.031       
+                                              (0.034)             (0.031)      
+                                                                               
+ColMin                                        -0.002              -0.001       
+                                              (0.001)             (0.001)      
+                                                                               
+DomEjec                                       -0.008              -0.008       
+                                              (0.013)             (0.012)      
+                                                                               
+Prop                                          0.0002               0.003       
+                                              (0.005)             (0.004)      
+                                                                               
+CSO                                           -0.034              -0.028       
+                                              (0.035)             (0.031)      
+                                                                               
+Fed                                            0.040               0.030       
+                                              (0.029)             (0.026)      
+                                                                               
+Bicameralismo                                  0.001              -0.003       
+                                              (0.029)             (0.026)      
+                                                                               
+RigConst                                      -0.038              -0.038       
+                                              (0.029)             (0.026)      
+                                                                               
+Jureview                                      -0.004               0.017       
+                                              (0.029)             (0.027)      
+                                                                               
+CBI                                           -0.280              -0.316       
+                                              (0.241)             (0.216)      
+                                                                               
+PIB                                                               0.094**      
+                                                                  (0.034)      
+                                                                               
+-------------------------------------------------------------------------------
+Observations                36                  36                  36         
+R2                         0.144               0.280               0.450       
+Adjusted R2                0.092              -0.008               0.197       
+Residual Std. Error   0.116 (df = 33)     0.122 (df = 25)     0.109 (df = 24)  
+F Statistic         2.778* (df = 2; 33) 0.973 (df = 10; 25) 1.782 (df = 11; 24)
+===============================================================================
+Note:                                               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+<p>El modelo simple tiene un ajuste R2 muy bajo y su significancia estadística conjunta apenas pasa la prueba. En él se aprecia que la dispersión del poder político, medido en la dimensión Ejecutivo-Partido, tiende a favorecer altos niveles de IDLI. Sin embargo, al descomponer los índices en sus elementos particulares esta significancia estadística se pierde. En particular, el modelo 2 tiene un ajuste muy bajo y el R2 del modelo 3 también. Ninguno de estos dos últimos supera la prueba de significancia estadísticas conjunta, lo que debe tenerse en cuenta al momento de interpretarlos. No obstante, al igual que los modelos presentados en el Proyecto de investigación, dan cuenta de que no parecen existir diferencias significativas en el diseño democrático mayoritario o consensual a la hora de respeter los derechos y libertades individuales cuando evaluamos democracias.</p>
+<p><strong>Modelo Logístico</strong></p>
+<p>Acorde al proyecto de investigación original, estudiaremos la relación entre los arregos institucionales de una democracia mayoritaria o consensual y la calidad de la democracia medida en el índice de democracia liberal de V-DEM. Consideraré una democracia de calidad una que supere el umbral de 0.8 en el Índice de Democracia Liberal de V-DEM (Coppedge et al., 2022).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>libdem <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>v2x_libdem</span> <span class='op'>&gt;=</span> <span class='fl'>0.8</span>, <span class='fl'>1</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Consideremos p es la probabilidad de éxito de que una democracia supere el umbral de 0.8 en el Índice de Democracia Liberal de V-Dem. Siendo este el caso, seguimos la fórmula del modelo de regresión logística:</p>
+<p><span class="math display">\[ln(odds)=ln(\frac{p}{1-p})\]</span></p>
+<p>En este modelo:</p>
+<p><span class="math display">\[logit^{-1}(\alpha) = \frac{1}{1+e^\alpha} = \frac{e^\alpha}{1+e^\alpha}\]</span></p>
+<p>Siendo <span class="math inline">\(\alpha\)</span> una combinación lineal de variables independientes y coeficientes que en nuestro caso está dada por:</p>
+<p><span class="math display">\[\alpha =  \beta_0 + \beta_1Nep + \beta_2ColMin + \beta_3DomEjec + \beta_4Prop + \beta_5CSO + \beta_6Fed+\beta_7Bicameralismo\\+ \beta_8RigConst + \beta_9Jureview+\beta_{10}CBI + \beta_{11}PIB +\mu\]</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>logit</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>libdem</span> <span class='op'>~</span> <span class='va'>nep</span> <span class='op'>+</span> <span class='va'>gabinete_min_pct</span> <span class='op'>+</span> <span class='va'>dom_ejecutivo</span> <span class='op'>+</span> <span class='va'>proporcionalidad</span> <span class='op'>+</span> <span class='va'>ind_cso</span> <span class='op'>+</span> <span class='va'>federalismo</span> <span class='op'>+</span></span>
+<span>                        <span class='va'>bicameralismo</span> <span class='op'>+</span> <span class='va'>rigidez_cp</span> <span class='op'>+</span> <span class='va'>jureview</span> <span class='op'>+</span> <span class='va'>cbi</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>e_gdppc</span><span class='op'>)</span>, <span class='va'>lp2</span>,  family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span><span class='st'>"logit"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/pkg/stargazer/man/stargazer.html'>stargazer</a></span><span class='op'>(</span><span class='va'>logit</span>,</span>
+<span>          type <span class='op'>=</span> <span class='st'>"text"</span>,</span>
+<span>          dep.var.caption <span class='op'>=</span> <span class='st'>"Modelos Logit"</span>,</span>
+<span>          dep.var.labels <span class='op'>=</span> <span class='st'>"Democracia Liberal"</span>,</span>
+<span>          intercept.bottom <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span>          covariate.labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Intercepto"</span>, <span class='st'>"Nep"</span>,<span class='st'>"ColMin"</span>,<span class='st'>"DomEjec"</span>,<span class='st'>"Prop"</span>,<span class='st'>"CSO"</span>,<span class='st'>"Fed"</span>,<span class='st'>"Bicameralismo"</span>,<span class='st'>"RigConst"</span>,<span class='st'>"Jureview"</span>,<span class='st'>"CBI"</span>,<span class='st'>"PIB"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+=============================================
+                         Modelos Logit       
+                  ---------------------------
+                      Democracia Liberal     
+---------------------------------------------
+Intercepto                  -1.939           
+                            (5.970)          
+                                             
+Nep                         -0.274           
+                            (0.648)          
+                                             
+ColMin                      0.0002           
+                            (0.027)          
+                                             
+DomEjec                     -0.278           
+                            (0.284)          
+                                             
+Prop                        -0.028           
+                            (0.108)          
+                                             
+CSO                         -0.349           
+                            (0.710)          
+                                             
+Fed                          0.510           
+                            (0.563)          
+                                             
+Bicameralismo               -0.047           
+                            (0.549)          
+                                             
+RigConst                     0.133           
+                            (0.591)          
+                                             
+Jureview                     0.235           
+                            (0.598)          
+                                             
+CBI                         -5.005           
+                            (4.988)          
+                                             
+PIB                          1.462           
+                            (1.042)          
+                                             
+---------------------------------------------
+Observations                  36             
+Log Likelihood              -18.708          
+Akaike Inf. Crit.           61.415           
+=============================================
+Note:             *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+<p>El modelo en cuestión tampoco revela ninguna relación estadísticamente significativa. Sin embargo, estos resultados deben tomarse con cautela debido a la existencia de pocas observaciones en la base. Un proyecto a largo plazo aumentaría el número de observaciones, ya sea añadiendo más países al conjunto original de datos o desagregando por año las unidades disponibles.</p>
+<h3 id="análisis-de-cluster">ANÁLISIS DE CLUSTER</h3>
+<p>Para concluir, haremos uso de un modelo de aprendizaje automático para clasificar clusters en la base de datos de Lijphart (1999) a partir del algoritmo de K-Medias. Este algortimo agrupa las observaciones en clusters homogéneos respecto de sí y heterogéneos respecto a los demás (Universidad de Cincinatti, 2022). Comenzaremos con el cálculo de una matriz de distancias euclidianas:</p>
+<p><span class="math display">\[d_{euc}(x,y) = \sqrt{\sum^n_{i=1}(x_i - y_i)^2}\]</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://www.sthda.com/english/rpkgs/factoextra'>factoextra</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lp_cluster</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span><span class='op'>[</span><span class='fl'>6</span><span class='op'>:</span><span class='fl'>15</span><span class='op'>]</span></span>
+<span><span class='va'>lp_cluster</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/scale.html'>scale</a></span><span class='op'>(</span><span class='va'>lp_cluster</span><span class='op'>)</span></span>
+<span><span class='va'>distancia</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/dist.html'>get_dist</a></span><span class='op'>(</span><span class='va'>lp_cluster</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/dist.html'>fviz_dist</a></span><span class='op'>(</span><span class='va'>distancia</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+</div>
+<p>La matriz de distancias parece revalar la existencia de 2 grupos con distancias marcadas entre sí, lo que es coherente con la tipificación de los modelos de democracia de Lijphart en consensuales o mayoritarios. Para testear esto, usaremos el algortimo de K-Medias dado por:</p>
+<p><span class="math display">\[W(C_k) = \sum_{x_i \in C_k}(x_i - \mu_k)^2\]</span></p>
+<p>Esta fórmula calcula un centro, el valor observado al que tienden las observaciones en un cluster, y compara la distancia de cada observación en el conglomerado con ese centro. Se espera minimizar esta distancia tanto como sea posible. La variación total al interior de cada cluster nos ayuda a calcular qué tan compactos son estos (Universidad de Cincinatti, 2022), se hace con la fórmula:</p>
+<p><span class="math display">\[tot.withiness = \sum^k_{k=1}W(C_k) = \sum^k_{k=1}\sum_{x_i \in C_k}(x_i - \mu_k)^2\]</span></p>
+<p>Al poner en práctica estos algoritmos con un tamaño K de clusters igual a dos y 25 iteraciones tenemos que:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span></span>
+<span><span class='va'>cluster</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/kmeans.html'>kmeans</a></span><span class='op'>(</span><span class='va'>lp_cluster</span>, centers <span class='op'>=</span> <span class='fl'>2</span>, nstart <span class='op'>=</span> <span class='fl'>25</span><span class='op'>)</span></span>
+<span><span class='va'>cluster</span></span></code></pre>
+</div>
+<pre><code>K-means clustering with 2 clusters of sizes 16, 20
+
+Cluster means:
+         nep gabinete_min_pct dom_ejecutivo proporcionalidad
+1 -0.8289186        0.9243533     0.7766373        0.7801131
+2  0.6631349       -0.7394826    -0.6213098       -0.6240905
+     ind_cso federalismo bicameralismo rigidez_cp   jureview
+1  0.8268907 -0.06203487     0.1883389  0.2389692  0.3142588
+2 -0.6615126  0.04962790    -0.1506711 -0.1911753 -0.2514070
+            cbi
+1 -0.0005873390
+2  0.0004698712
+
+Clustering vector:
+ [1] 1 1 2 1 1 2 1 1 1 2 2 1 2 1 2 2 2 2 2 1 2 1 2 1 2 2 2 2 2 1 2 2 1
+[34] 1 2 1
+
+Within cluster sum of squares by cluster:
+[1]  94.92978 150.46257
+ (between_SS / total_SS =  29.9 %)
+
+Available components:
+
+[1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;    
+[5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
+[9] &quot;ifault&quot;      </code></pre>
+</div>
+<p>Se generaron dos grupos con tamaño 20 y 16 con un ratio de 29.9% en la variación entre clusters y la variación total. Al visualizar en un gráfico a partir de dos componentes principales que el algoritmo genera empleando Análisis de Componentes Principales obtenemos que:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/fviz_cluster.html'>fviz_cluster</a></span><span class='op'>(</span><span class='va'>cluster</span>, data <span class='op'>=</span> <span class='va'>lp_cluster</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+</div>
+<p>Los grupos son lo suficientemente heterogéneos entre sí, a pesar de que existe varianza en su interior. Al estudiar cómo estas dimensiones principales se componen encontramos que:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://factominer.free.fr'>FactoMineR</a></span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span></span>
+<span><span class='va'>lp_pca</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span><span class='op'>[</span><span class='fl'>6</span><span class='op'>:</span><span class='fl'>15</span><span class='op'>]</span></span>
+<span><span class='va'>pca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/PCA.html'>PCA</a></span><span class='op'>(</span><span class='va'>lp_pca</span><span class='op'>)</span></span></code></pre>
+</div>
+<img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-14-1.png" width="624" /><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-14-2.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>pca</span>, loadings <span class='op'>=</span> <span class='cn'>T</span>, cutoff <span class='op'>=</span> <span class='fl'>0.3</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+PCA(X = lp_pca) 
+
+
+Eigenvalues
+                       Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6
+Variance               3.699   2.883   0.767   0.662   0.641   0.440
+% of var.             36.992  28.835   7.665   6.625   6.408   4.396
+Cumulative % of var.  36.992  65.827  73.492  80.117  86.525  90.921
+                       Dim.7   Dim.8   Dim.9  Dim.10
+Variance               0.382   0.249   0.173   0.104
+% of var.              3.825   2.486   1.729   1.039
+Cumulative % of var.  94.746  97.232  98.961 100.000
+
+Individuals (the 10 first)
+                     Dist    Dim.1    ctr   cos2    Dim.2    ctr
+1                |  3.427 |  1.788  2.401  0.272 |  2.499  6.017
+2                |  3.349 |  1.166  1.022  0.121 |  2.822  7.674
+3                |  3.025 | -1.376  1.421  0.207 |  1.636  2.580
+4                |  2.746 |  2.522  4.775  0.843 | -0.330  0.105
+5                |  2.859 |  2.277  3.894  0.634 | -0.854  0.702
+6                |  2.962 | -2.087  3.269  0.496 |  0.857  0.708
+7                |  3.456 |  3.082  7.132  0.795 | -0.772  0.574
+8                |  3.804 |  1.858  2.592  0.239 |  3.126  9.415
+9                |  2.451 |  0.997  0.747  0.166 | -0.358  0.124
+10               |  3.101 | -2.679  5.391  0.746 | -0.810  0.632
+                   cos2    Dim.3    ctr   cos2  
+1                 0.532 |  0.377  0.515  0.012 |
+2                 0.710 | -0.338  0.414  0.010 |
+3                 0.293 | -1.050  3.995  0.120 |
+4                 0.014 | -0.589  1.256  0.046 |
+5                 0.089 | -0.534  1.035  0.035 |
+6                 0.084 |  1.027  3.821  0.120 |
+7                 0.050 | -0.513  0.953  0.022 |
+8                 0.676 | -0.097  0.034  0.001 |
+9                 0.021 |  0.969  3.400  0.156 |
+10                0.068 | -0.398  0.573  0.016 |
+
+Variables
+                    Dim.1    ctr   cos2    Dim.2    ctr   cos2  
+nep              | -0.879 20.865  0.772 |  0.035  0.042  0.001 |
+gabinete_min_pct |  0.899 21.833  0.808 | -0.004  0.001  0.000 |
+dom_ejecutivo    |  0.800 17.283  0.639 |  0.077  0.208  0.006 |
+proporcionalidad |  0.790 16.870  0.624 |  0.089  0.272  0.008 |
+ind_cso          |  0.810 17.744  0.656 | -0.023  0.019  0.001 |
+federalismo      | -0.265  1.902  0.070 |  0.886 27.245  0.786 |
+bicameralismo    |  0.067  0.123  0.005 |  0.794 21.865  0.630 |
+rigidez_cp       |  0.072  0.138  0.005 |  0.734 18.698  0.539 |
+jureview         |  0.279  2.103  0.078 |  0.676 15.871  0.458 |
+cbi              | -0.205  1.138  0.042 |  0.675 15.779  0.455 |
+                  Dim.3    ctr   cos2  
+nep               0.222  6.422  0.049 |
+gabinete_min_pct -0.223  6.467  0.050 |
+dom_ejecutivo    -0.207  5.593  0.043 |
+proporcionalidad  0.331 14.265  0.109 |
+ind_cso           0.044  0.250  0.002 |
+federalismo      -0.077  0.777  0.006 |
+bicameralismo     0.014  0.026  0.000 |
+rigidez_cp        0.164  3.505  0.027 |
+jureview          0.423 23.361  0.179 |
+cbi              -0.549 39.333  0.301 |</code></pre>
+</div>
+<p>Al observar los Eigenvalor de cada dimensión encontramos que la primera y la segunda son las únicas con puntajes superiores a uno. Entre las dos, explican un 65.82% de la varianza, siendo la primera la que mayor relevancia tiene (39.99%) sobre la segunda (28.83%).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/eigenvalue.html'>fviz_eig</a></span><span class='op'>(</span><span class='va'>pca</span>, addlabels <span class='op'>=</span> <span class='cn'>T</span>, ylim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>50</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+</div>
+<p>Al examinar los componentes de cada dimensión:</p>
+<p><strong>Dimensión 1</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/fviz_contrib.html'>fviz_contrib</a></span><span class='op'>(</span><span class='va'>pca</span>, choice <span class='op'>=</span> <span class='st'>"var"</span>, axes <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
+</div>
+<p>Podemos notar que este componente se nutre del porcentaje de gabinetes de partido único, el número de partidos políticos en el parlamento, la estructura de las organizaciones de la sociedad civil, el dominio del ejecutivo sobre el legislativo y la proporcionalidad del sistema electoral. Es decir, los cinco elementos de la dimensión Ejecutivo-Partidos de Lijphart (1999).</p>
+<p><strong>Dimensión 2</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/fviz_contrib.html'>fviz_contrib</a></span><span class='op'>(</span><span class='va'>pca</span>, choice <span class='op'>=</span> <span class='st'>"var"</span>, axes <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+</div>
+<p>En este caso, la segunda dimensión se nutre del federalismo, el bicameralismo, la rigidez constitucional, la fortaleza del órgano de revisión judicial y la independencia del banco central. Estos elementos son también los componentes de la dimensión Federal-Unitaria de Lijphart (1999).</p>
+<p>En base a esto podemos concluir que dos clusters reflejan bien el comportamiento de los datos de la base, pero podemos testear esta suposición empleando el método silhouette:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/fviz_nbclust.html'>fviz_nbclust</a></span><span class='op'>(</span><span class='va'>lp_cluster</span>, <span class='va'>kmeans</span>, method <span class='op'>=</span> <span class='st'>"silhouette"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-18-1.png" width="624" /></p>
+</div>
+<p>El méotodo silhouette indica que tres grupos maximizarían la potencia del análisis. Esto tiene sentido, al ser el eje mayoritario-consensual un continuo, tres clusters podrían capturar casos grises:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span></span>
+<span><span class='va'>cluster_alt</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/kmeans.html'>kmeans</a></span><span class='op'>(</span><span class='va'>lp_cluster</span>, centers <span class='op'>=</span> <span class='fl'>3</span>, nstart <span class='op'>=</span> <span class='fl'>25</span><span class='op'>)</span></span>
+<span><span class='va'>cluster_alt</span></span></code></pre>
+</div>
+<pre><code>K-means clustering with 3 clusters of sizes 16, 12, 8
+
+Cluster means:
+          nep gabinete_min_pct dom_ejecutivo proporcionalidad
+1  0.64410336     -0.724363333    -0.6632404      -0.59015700
+2 -0.90885751      0.967203853     0.8229569       0.79212957
+3  0.07507953     -0.002079114     0.0920455      -0.00788037
+     ind_cso federalismo bicameralismo rigidez_cp    jureview
+1 -0.5770604  -0.3331003    -0.4385974 -0.4127649 -0.51011200
+2  0.8672342  -0.6365317    -0.2373586 -0.1303468  0.01489378
+3 -0.1467305   1.6209981     1.2332327  1.0210500  0.99788333
+         cbi
+1 -0.3917551
+2 -0.2772240
+3  1.1993463
+
+Clustering vector:
+ [1] 3 3 3 2 2 1 2 3 2 1 1 2 3 2 1 3 1 1 1 2 1 2 1 2 1 1 1 1 1 2 1 3 2
+[34] 2 1 3
+
+Within cluster sum of squares by cluster:
+[1] 85.28892 48.00396 55.76262
+ (between_SS / total_SS =  46.0 %)
+
+Available components:
+
+[1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;    
+[5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
+[9] &quot;ifault&quot;      </code></pre>
+</div>
+<p>Se construyen grupos de 8, 16 y 12. Debe notarse que el ratio de la variación dentro del grupo y entre los grupos ha aumentado. Esto es una buena noticia, al examinar en un mapa la conformación de los grupos observamos que los 3 clusters siguen diferenciándose claramente:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/pkg/factoextra/man/fviz_cluster.html'>fviz_cluster</a></span><span class='op'>(</span><span class='va'>cluster_alt</span>, data <span class='op'>=</span> <span class='va'>lp_cluster</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-20-1.png" width="624" /></p>
+</div>
+<p>Procederemos a extraer estos resultados para agregarlos a nuestra base:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>cluster <span class='op'>=</span> <span class='va'>cluster_alt</span><span class='op'>$</span><span class='va'>cluster</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Al examinar nuestros clusters tenemos que:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>country_name</span>, <span class='va'>cluster</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>cluster</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 36 × 2
+   country_name cluster
+   &lt;chr&gt;          &lt;int&gt;
+ 1 Belgium            1
+ 2 Denmark            1
+ 3 Finland            1
+ 4 Iceland            1
+ 5 Ireland            1
+ 6 Israel             1
+ 7 Italy              1
+ 8 Japan              1
+ 9 Luxembourg         1
+10 Mauritius          1
+# … with 26 more rows</code></pre>
+</div>
+<p>Suiza, Alemania, India y Austria lideran el cluster 1. Estos regímenes son ejemplos del modelo consensual puro teorizado por Lijphart (1999). No obstante, llama la inclusión la aparación de otros sistemas políticos que no suelen encajar en esta categoría. En particular, debido a la concentración del poder político en el Ejecutivo, llama la atención que Estados Unidos y Australia aparezcan en esta categoría. En base a esto denomino al cluster como Modelos Consensuales.</p>
+<p>El cluster 2 tiene regímenes normalmente asociados a modelos consensuales como Bélgica, Japón, Países Bajos y Suecia, pero también se compone de otros como Nueva Zelanda que Lijphart (1999) clasifica como tipos puros de modelos mayoritarios. Defino a este grupo como Modelos Mixtos.</p>
+<p>El cluster 3 se nutre de países fuertemente asociados a los modelos mayoritarios como Reino Unido, Barbados, Bahamas, Francia, Grecia, Jamaica y España. Se domina a este cluster Modelos Mayoritarios.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'>&lt;-</span> <span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>modelos <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span><span class='va'>cluster</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"Consensual"</span>,</span>
+<span>                             <span class='va'>cluster</span> <span class='op'>==</span> <span class='fl'>2</span> <span class='op'>~</span> <span class='st'>"Mixto"</span>,</span>
+<span>                             <span class='va'>cluster</span> <span class='op'>==</span> <span class='fl'>3</span> <span class='op'>~</span> <span class='st'>"Mayoritario"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>country_name</span>, <span class='va'>modelos</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 36 × 2
+   country_name modelos    
+   &lt;chr&gt;        &lt;chr&gt;      
+ 1 Argentina    Mayoritario
+ 2 Australia    Mayoritario
+ 3 Austria      Mayoritario
+ 4 Bahrain      Mixto      
+ 5 Barbados     Mixto      
+ 6 Belgium      Consensual 
+ 7 Botswana     Mixto      
+ 8 Canada       Mayoritario
+ 9 Costa Rica   Mixto      
+10 Denmark      Consensual 
+# … with 26 more rows</code></pre>
+</div>
+<p>Concluyo evaluando la relación entre modelos mayoritarios-mixtos y el respeto por la democracia encontramos que pese a la diferencia de promedios entre modelos puros, no puede hablarse de superioridad de un modelo frente a otro. Al contrario, las concepciones consensuales y mayoritarias de la democracias tienen elementos que pueden nutrir a un sistema democrático funcional y respetuoso de los derechos de las personas ¿Cuáles instituciones adoptar? Es un tema para una investigación futura:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lp2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>modelos</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_idli <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>v2xcl_rol</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_reorder.html'>fct_reorder</a></span><span class='op'>(</span><span class='va'>modelos</span>, <span class='va'>mean_idli</span><span class='op'>)</span>, <span class='va'>mean_idli</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"lightgrey"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Gráfico 1. Media Índice de Derechos y Libertades Individuales según \nModelos de Democracia (1981-2010)."</span>,</span>
+<span>       x <span class='op'>=</span> <span class='st'>""</span>,</span>
+<span>       y <span class='op'>=</span> <span class='st'>"Índice de Derechos y Libertades Individuales V-Dem (2022)"</span>,</span>
+<span>       caption <span class='op'>=</span> <span class='st'>"Fuente: Elaboración propia en base a Lijphart (1999), Eggers (2022) y V-Dem (2022)."</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_flip.html'>coord_flip</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Anexo-N%C2%B01_files/figure-html5/unnamed-chunk-24-1.png" width="624" /></p>
+</div>
+<h3 id="referencias-bibliográficas">Referencias Bibliográficas</h3>
+<ul>
+<li><p>Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Ryden, Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning, Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig, Steven Wilson and Daniel Ziblatt. 2022. VDem [Country–Year/Country–Date] Dataset v12” Varieties of Democracy (V-Dem) Project. <a href="https://doi.org/10.23696/vdemds22" class="uri">https://doi.org/10.23696/vdemds22</a>.</p></li>
+<li><p>Eggers, A. (2022). Lijphart Dataset. Recuperado de: <a href="https://andy.egge.rs/data.html" class="uri">https://andy.egge.rs/data.html</a></p></li>
+<li><p>Universidad de Cincinatti. (2022). K-means Cluster Analysis. Recuperado de: <a href="https://uc-r.github.io/kmeans_clustering" class="uri">https://uc-r.github.io/kmeans_clustering</a></p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
