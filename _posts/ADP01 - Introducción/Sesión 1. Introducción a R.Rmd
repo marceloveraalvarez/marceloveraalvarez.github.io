@@ -1,0 +1,346 @@
+---
+title: "Sesión 01. Introducción a R"
+description: |
+  Conceptos básicos de R.
+author:
+  - name: Marcelo Vera Álvarez
+    url: https://marceloveraalvarez.github.io/
+date: 2023-03-31
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### **1. ¿Qué es R?**
+
+El propósito de nuestras sesiones de ayudantía es aprender a usar R para aplicaciones en Ciencia Política. R es un lenguaje de programación de código abierto y gratuito diseñado con propósitos estadísticos. Una de sus ventajas es contar con una gran comunidad de usuarios que comparten preguntas y respuestas en distintas áreas, como esto señala, R es ampliamente utilizado y está en contínuo crecimiento. De hecho, es normal que los cursos de Análisis de Datos en Ciencia Política se enfoquen por su uso. 
+
+El gran desafío de aprender R es el inicio, su curva de aprendizaje es elevada, por lo que nuestros primeros pasos suelen ser difíciles. Sin embargo, conforme vamos interiorizando el lenguaje y su funcionamiento, las cosas se vuelven más fáciles. El inicio es fundamental, por eso dedicaremos la mayor parte del tiempo a los fundamentos básicos de la programación en R antes de pasar a la construcción y aplicación de modelos estadísticos. Una precisión es importante, no vamos a programar como tal, sólo aprender los elementos constitutivos del programa y cómo funcionan. Una vez asimilemos esta información, el resto será más abordable.
+
+Antes de comenzar es necesario aclarar algunos puntos sobre R. Se trata de un lenguaje de programación interpretado, esto significa que los comandos se ejecutan línea por línea en la consola de R o a través de scripts. 
+
+Además, R es sensible a mayúsculas, esto significa que -para el programa- "TOMATE" y "tomate" son información distinta.
+
+R también es altamente personalizable y extensible, gracias a la gran cantidad de paquetes y librerías que están disponibles para su uso.
+
+Por último, R es un programa orientado a objetos. Un objeto es uno o varios valores asociados a un nombre. Estos valores son distintos tipos de datos. R es orientado a objetos porque permite la creación y manipulación de objetos que contienen tanto datos como funciones relacionadas, lo que permite construir programas de manera modular y eficiente.
+
+R es importante para la Ciencia Política porque ofrece una amplia gama de herramientas para el análisis de datos cuantitativos y la creación de visualizaciones. Los métodos cuantitativos y el análisis estadístico son fundamentales para la investigación en Ciencia Política y R nos permite aplicarlos de forma flexible y potente.
+
+### **2. Objetos y asignación de valores**
+
+En R, un objeto es una entidad que contiene valores y se puede referenciar mediante un nombre. Los objetos se utilizan para almacenar datos, resultados de cálculos, modelos, gráficos y otros tipos de información que se pueden manipular y analizar en R. De hecho, cualquier cosa que hagamos en el programa puede guardarse como un objeto
+
+¿A qué nos referimos con guardar un objeto? Los objetos en R pueden ser de diferentes tipos de datos, como números, caracteres, lógicos, factores, vectores y matrices, entre otros. Cada objeto tiene un nombre que se utiliza para referenciarlo en el código de R, así podemos "llamarlo" cuando lo necesitemos para una operación. Por ejemplo, deseamos crear un objeto llamado "Curso" que contenga el valor "Análisis de Datos". Podemos hacer esto con el operador "<-".
+
+```{r}
+Curso <- "Análisis de Datos"
+```
+
+Y podemos "llamar" este objeto a R referenciandolo por su nombre.
+
+```{r}
+Curso
+```
+Existen algunas convenciones respecto al tipo de nombre que elegimos para nuestros objetos. Esto facilita nuestro trabajo, hace que nuestro código sea comprensible para nosotros mismos y para los demás. A continuación se da un listado de reglas:
+
+* Utiliza nombres descriptivos: Nombra los objetos de forma clara y concisa para que el nombre indique el contenido y la función del objeto.
+
+* Utiliza minúsculas: Al nombrar los objetos, utiliza sólo minúsculas, esto hará más sencillo referenciarlos. Evitas posibles errores de tipeo y ahorras tiempo al escribirlos.
+
+* Evita nombres con espacios: Los espacios sólo complicarán que los referenciemos en nuestro código. Si quieres guardar un objeto como "Cadem 2020" puedes hacerlo como "cadem_2020" o "cadem2020".
+
+* No comiences con un número: Sencillamente R no reconocerá el objeto, los nombres pueden tener números, pero no comenzar con ellos, siempre con una letra.
+
+* Usa nombres cortos.
+
+* Se consistente: Si usarás un nombre para un objeto, es escencial que este siempre signifique lo mismo en todo tu código.
+
+Ahora pongámos esto en práctica. Lo que varás bajo este párrafo se llama *chunk*. Un chunk es un bloque de código en el que podemos realizar operaciones con R.
+
+
+```{r}
+#Esto es un chunk con una anotación de texto (puedes reconocer anotaciones por el # que las antecede)
+```
+
+Para crearlo tenemos dos opciones:
+
+Windows: Control + Alt + I
+
+MAC: Cmd + Option + I
+
+**Ejercicio 1. Intenta crear tu propio chunk en la línea de abajo.**
+
+Bien, ahora usaré el siguiente chunk para ejemplificar la asignación de valores a objetos en R. Para asignar valores podemos usar "=" o "<-", ambas funcionan, pero por convención (son muy importantes en R) usaremos "<-".
+
+Para que el código de abajo funcione tienes que ejecutarlo. Para hacerlo tienes dos opciones:
+
+Windows: Control + Shift + Enter (con el cursor en el bloque de código)
+
+Mac: Cmd + Shift + Enter (con el cursor en el bloque de código)
+
+```{r}
+x <- 5
+
+mensaje <- "Hola!"
+
+numeros <- c(1,2,3,4,5)
+
+colores <- c("blanco","rojo","azul")
+```
+
+Observarás que en el panel derecho "Environment" se generarán "Values" con los nombres de tus objetos. Esto significa que han sido almacenados en la memoria de R. En realidad, R no necesita que aparezcan los nombres para recordarlos, esa es una ayuda para nosotros. Ahora podemos llamar de vuelta a nuestros objetos:
+
+```{r}
+x
+mensaje
+numeros
+colores
+```
+
+**Ejercicio 2**
+
+**a) Asigna el número 10 a un objeto llamado y**
+
+**b) Asigna tu nombre completo a un objeto llamado nombre**
+
+### **3. Tipos de datos**
+
+Tus objetos son datos, los datos pueden clasificarse en distintos tipos porque representan información de distinta clase, es importante que conozcamos los tipos de datos básicos que podemos usar en R para asegurarnos de que estamos tratando la información de manera adecuada.
+
+* Datos numéricos: Representan números, hay dos tipos básicos, números enteros (integer) y decimales (numeric).
+
+* Cadenas de caracteres: Se utilizan para representar texto (character).
+
+* Valores lógicos: Representan Verdadero (TRUE) o Falso (FALSE), pueden abreviarse como T o F (logical).
+
+* Vectores: Almacenan conjuntos de valores de un mismo tipo de datos.
+
+**Datos numéricos**
+
+Para definir un dato numérico sólo debes escribir un número, por ejemplo:
+
+```{r}
+edad <- 24
+anio_nacimiento <- 1998
+pi <- 3.14
+
+edad
+anio_nacimiento
+pi
+```
+
+Los datos numéricos nos permiten hacer operaciones matemáticas básicas. Los operadores aritméticos disponibles en R son:
+
+* Suma (+)
+* Resta (-)
+* Multiplicación (*)
+* División (/)
+* Exponente (^)
+
+Ejemplos de su aplicación:
+
+```{r}
+2 + 2
+10 - 7
+2*8
+20/2
+2^3
+```
+
+Podemos combinarlos siguiendo las reglas básicas de prioridad de operaciones:
+
+```{r}
+(5 + 2 - 4 + (100/10)^2) - 3
+```
+
+De hecho, podemos usar los objetos numéricos que guardamos para hacer operaciones aritméticas con ellos ¿Qué ocurre si sumo mi edad con mi año de nacimiento?
+
+```{r}
+edad + anio_nacimiento
+```
+
+Este valor se puede guardar como un nuevo objeto (Todo puede ser un objeto, por eso R es un lenguaje orientado a objetos)
+
+```{r}
+suma <- edad + anio_nacimiento
+
+suma
+```
+
+**Cadenas de caracteres**
+
+Una cadena de caracteres es una secuencia de caracteres, como letras, números y símbolos. Puedes reconocer datos de este tipo porque siempre están entre comillas. Por ejemplo, si quiero guardar mi nombre:
+
+```{r}
+nombre <- "Marcelo"
+```
+
+Hay números que son datos de tipo caracter. Lo determinante es que tenga comillas, por ejemplo:
+
+```{r}
+dato_numerico <- 5
+
+dato_caracter <- "5"
+```
+
+Si yo sumo un número a mi dato numérico, R podrá realizar la operación:
+
+```{r}
+dato_numerico + 5
+```
+
+**Ejercicio 3. Intenta sumar 5 a tu dato_caracter**
+
+```{r}
+
+```
+
+"Error in dato_caracter + 5 : non-numeric argument to binary operator" significa que sumaste un valor no numérico a un número. R nos avisa cuando cometemos errores (aunque no siempre es fácil entender cuál es el error). Solucionar los errores es necesario para que R pueda copilar tu código, por eso, tu siguiente ejercicio será borrar la linea de código del ejercicio 3.
+
+Aunque existen distintas operaciones que podemos hacer con cadenas de texto, no nos centraremos en ello aún, pues sería entrar en un nivel muy avanzado. Lo mismo podemos decir de los valores lógicos, sin embargo, para avanzar en el resto del curso tenemos que entender qué son los vectores.
+
+**Vectores**
+
+En R, un vector es una colección de elementos del mismo tipo de datos, como números, caracteres o valores lógicos. Los vectores se pueden utilizar para almacenar y manipular datos de manera eficiente. 
+
+Para definir un vector se usa la función c() para concatenar valores separados por comas. Por ejemplo, para definir un vector de números, se puede escribir:
+
+```{r}
+numeros <- c(1,2,3,4,5)
+numeros
+```
+
+Para definir un vector de caracteres, se puede escribir:
+
+```{r}
+frutas <- c("manzana","piña","plátano","pera")
+frutas
+```
+
+Entender como funcionan los vectores será vital para aprender a usar R. El siguiente vector contiene los 10 países más igualitarios en 2018 usando datos del Banco Mundial y midiendo por el Índice de Gini.
+
+```{r}
+paises_gini <- c("Islandia", "Eslovaquia","Eslovenia", "Noruega","Ucrania","República Checa","Finlandia",
+                 "Bélgica","Moldavia","Kirguistán")
+```
+
+La razón por la que creamos este vector es porque nos permite enseñar de forma intuitiva lo que es la **indexación de vectores**.
+
+En R, se puede acceder a los elementos de un vector utilizando su índice. El primer elemento de un vector tiene un índice de 1, el segundo elemento tiene un índice de 2, y así sucesivamente. Para acceder a un elemento de un vector, se puede utilizar el operador de corchetes "[ ]". 
+
+Por ejemplo, supongamos que queremos saber cuál es el 8vo país más igualitario del mundo según nuestros datos. Para ello, escribimos el nombre del vector y entre corchetes, su octavo elemento, [8]:
+
+```{r}
+paises_gini[8]
+```
+
+**Ejercicio 4. Selecciona el tercer cuarto país más igualitario**
+
+```{r}
+
+```
+
+También es posible acceder a varios elementos de un vector al mismo tiempo utilizando la notación de rango. Por ejemplo, supongamos que quiero elegir los 3 países más igualitarios:
+
+```{r}
+paises_gini[1:3]
+```
+
+**Ejercicio 5. Selecciona los primeros 5 países más igualitarios**
+
+```{r}
+
+```
+
+Los vectores también pueden ser numéricos. Respecto a los datos numéricos, ellos nos permiten hacer operaciones aritméticas. Por lo tanto, también podemos hacer operaciones aritméticas con vectores.
+
+```{r}
+numeros
+```
+
+Si escribimos numeros + 2, R sumará 2 a cada elemento del vector.
+
+```{r}
+numeros + 2
+```
+
+Si escribimos numeros * 2, R multiplicará cada elemento del vector por 2
+
+```{r}
+numeros * 2
+```
+
+¿Por qué esto es importante?
+
+Bueno, supongamos que tenemos un vector con el PIB de tres países: Argentina, Chile y Uruguay.
+
+```{r}
+pib <- c(487200000000, 317100000000, 59320000000)
+```
+
+También tenemos su población.
+
+```{r}
+poblacion <- c(45810000, 19490000, 3426000)
+```
+
+Si quiero saber cuál es el pib per cápita de cada país sencillamente puedo tomar ambos vectores y dividirlos:
+
+```{r}
+pib_pc <- pib/poblacion
+```
+
+
+**Bases de datos**
+
+Podemos encontrar una forma más sencilla de ver esta información con una base de datos. Profundizaremos más este concepto en futuras entregas. En R, un data.frame es una estructura de datos rectangular que se utiliza para almacenar conjuntos de datos de diferentes tipos, como vectores, matrices o factores, en columnas etiquetadas. 
+
+Un data.frame puede contener diferentes tipos de datos, como caracteres, numéricos, lógicos y factores, pero todas las columnas deben tener la misma longitud. Además, las filas y las columnas están indexadas, lo que permite acceder y manipular los datos de manera eficiente utilizando diversas funciones y operaciones de R.
+
+Podemos crear una base de datos con nuestros vectores y con la función data.frame() de la siguiente forma:
+
+```{r}
+paises <- c("Argentina","Chile","Uruguay")
+
+datos_gini <- data.frame(paises, pib, poblacion, pib_pc)
+
+datos_gini
+```
+De esta manera es más fácil trabajar con la información. Trabajaremos con funciones y bases de datos en la próxima sesión, hasta entonces es necesario tener algún manejo de los contenidos que revisamos hoy, ya que están en el corazón del resto del curso. Puedes repasar con los siguientes ejercicios de repaso.
+
+### **4. Ejercicios de Repaso**
+
+**Ejercicio 1. Crea un objeto llamado "edad" y asígnale el valor 27.**
+
+**Ejercicio 2. Crea un objeto llamado "estatura" y asígnale el valor 1.75.**
+
+**Ejercicio 3. Crea un objeto llamado "nombre" y asígnale tu nombre completo como un string.**
+
+**Ejercicio 4. Crea un objeto llamado "fecha" y asígnale tu fecha de nacimiento como un string en formato "DD/MM/AAAA".**
+
+**Ejercicio 5. Crea un objeto llamado "vector1" y asígnale los valores 1, 3, 5, 7, 9 como un vector.**
+
+**Ejercicio 6. Crea un objeto llamado "vector2" y asígnale los valores 2, 4, 6, 8, 10 como un vector.**
+
+**Ejercicio 7. Crea un objeto llamado "vector3" y asígnale los valores de la suma de los valores de "vector1" y "vector2".**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
