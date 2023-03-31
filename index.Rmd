@@ -1,5 +1,5 @@
 ---
-title: "Análisis de Datos Políticos 2023"
+title: "Política y Perspectiva"
 site: distill::distill_website
 listing: posts
 ---

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/welcome/",
+    "title": "Análisis de Datos Políticos | Material de Ayudantía 2023",
+    "description": "En esta página compartiremos distinto material relacionado con la ayudantía de Análisis de Datos Políticos.",
+    "author": [
+      {
+        "name": "Marcelo Vera",
+        "url": {}
+      }
+    ],
+    "date": "2023-03-30",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2023-03-31T00:58:03-03:00",
+    "input_file": "welcome.knit.md"
+  },
+  {
     "path": "posts/Anexo N°2/",
     "title": "Anexo N°2 - Índice alternativo de Derechos y Libertades con Análisis Factorial",
     "description": "Anexo N°2 Medición y Análisis Dimensional de Datos Políticos.",
