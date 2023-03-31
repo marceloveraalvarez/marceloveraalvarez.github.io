@@ -1,21 +1,22 @@
 ---
-title: "Análisis de Datos Políticos | Material de Ayudantía 2023"
+title: "Welcome to My Blog"
 description: |
-  En esta página compartiremos distinto material relacionado con la ayudantía de Análisis de Datos Políticos.
+  Welcome to our new blog, My Blog. We hope you enjoy 
+  reading what we have to say!
 author:
-  - name: Marcelo Vera
-    url: 
-    affiliation: Universidad Alberto Hurtado
-    affiliation_url: 
-date: 03-30-2023
+  - name: Nora Jones 
+    url: https://example.com/norajones
+    affiliation: Spacely Sprockets
+    affiliation_url: https://example.com/spacelysprokets
+date: 08-18-2022
 output:
   distill::distill_article:
-    self_contained: true
+    self_contained: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-distill::create_theme("theme")
+
 # Learn more about creating blogs with Distill at:
 # https://rstudio.github.io/distill/blog.html
 

@@ -1,0 +1,11 @@
+"0","tabla <- round(tabla[,2:17], 2)
+"
+"1","[1m[33mError[39m in [38;5;232m`vectbl_as_col_location()`[39m:[22m
+[33m![39m Can't subset columns past the end.
+[38;5;232m[36mℹ[38;5;232m Locations 8, 9, 10, 11, 12, … don't exist.
+[36mℹ[38;5;232m There are only 7 columns.[39m
+Backtrace:
+[90m 1. [39mtabla[, 2:17]
+[90m 2. [39m[1mtibble[22m:::`[.tbl_df`(tabla, , 2:17)
+[90m 3. [39mtibble:::vectbl_as_col_location(...)
+"

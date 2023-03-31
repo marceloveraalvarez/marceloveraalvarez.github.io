@@ -1,9 +1,8 @@
-name: "Analisis_Datos"
-title: "Política y Perspectiva"
+name: "marceloveraalvarez.github.io"
+title: "My Blog"
 description: |
-  Material de Ayudantía
-output_dir: "_site"
-theme: theme.css
+  My Blog
+output_dir: "docs"
 navbar:
   right:
     - text: "Home"

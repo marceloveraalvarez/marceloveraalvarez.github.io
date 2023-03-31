@@ -1,0 +1,18 @@
+"0","mv <- fa(r = vd2, # Puede ser una base de datos o una matriz de datos."
+"0","         nfactors = 3,"
+"0","         rotate = ""varimax"", # Suele ser la más utilizada"
+"0","         fm = ""mle"", "
+"0","         residuals = T)"
+"0",""
+"0","mv"
+"1","Factor Analysis using method = "
+"1"," "
+"1","ml"
+"1","
+Call: "
+"1","fa(r = vd2, nfactors = 3, rotate = ""varimax"", residuals = T, 
+"
+"1","    fm = ""mle"")
+"
+"1","Standardized loadings (pattern matrix) based upon correlation matrix
+"

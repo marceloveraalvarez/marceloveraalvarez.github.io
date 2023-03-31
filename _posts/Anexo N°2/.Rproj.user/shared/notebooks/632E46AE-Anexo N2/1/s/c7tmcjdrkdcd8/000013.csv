@@ -1,0 +1,35 @@
+"0","vd <- read_csv(""v-dem.csv"") %>% 
+  select(country_name, 
+         COWcode, 
+         year, 
+         v2cltort,
+         v2mecenefm,
+         v2cldiscm,
+         v2cldiscw,
+         v2csreprss,
+         v2clprptym, 
+         v2clprptyw,
+         v2cldmovem, 
+         v2cldmovew,
+         v2clfmove, 
+         v2clrelig, 
+         v2clacjstm,
+         v2clacjstw,
+         v2clacjust, 
+         v2clsocgrp,  
+         v2clgencl,
+         v2xcl_rol)
+"
+"2","Warning: [38;5;254mOne or more parsing issues, call `problems()` on your data frame for details, e.g.:
+  dat <- vroom(...)
+  problems(dat)[39m"
+"2","[1mRows: [22m[34m27380[39m [1mColumns: [22m[34m4170[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m    (28): country_name, country_text_id, histname, v2lpname, v2slpname, v2tlpname, v2elregnam, v2ellocnam, v2exnamhos, v...
+[32mdbl[39m  (4137): country_id, year, project, historical, codingstart, codingend, codingstart_contemp, codingend_contemp, codings...
+[33mlgl[39m     (4): v3elageuc, v3eltvriguc, v3elupvtlg, v3elupvtsm
+[34mdate[39m    (1): historical_date"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

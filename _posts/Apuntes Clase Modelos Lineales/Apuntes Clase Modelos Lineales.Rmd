@@ -1,0 +1,154 @@
+---
+title: "Apuntes Modelos Lineales"
+description: |
+  Clase modelos lineales Medición y Análisis Dimensional de Datos Políticos.
+author:
+  - name: Marcelo Vera Álvarez
+    url: https://marceloveraalvarez.github.io/
+date: 2022-09-01
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introducción
+
+Regresión lineal simple como medio para probar hipótesis. Usaremos la base de datos de V-Dem, un efoque multicomprensivo para entender la democratización.
+
+```{r}
+library(tidyverse)
+library(sjmisc)
+library(kableExtra)
+
+vdem <- readRDS("vdem_subset.rds")
+```
+
+**Apunte: Segunda entrega será operacionalización de variables**
+
+La idea intuitiva de la regresión vibariada es que se trata de ajustar el modelo a la mejor línea que atreviesa el gráfico. Este modelo inferencial suele seguir una fórmula:
+
+$$Y=m_x+b$$
+
+Dónde b es un intercepto y m la pendiente. Por el incremento en una unidad de X, m representa el cambio correspondiente de la cantidad de Y. En conjunto, estas líneas son descritas como parámetros. En una regresión simple el intercepto se representa con la letra alpha y la pendiente con la letra beta.
+
+$$Y_i = \alpha + \beta_1 + \mu_i$$
+
+No solemos conocer la población, trabajamos con muestras de los datos que son útiles para hacer inferencias sobre la población de interés, para distinguirlo de lo anterior usamos sombreritos sobre los parámetros.
+
+$$Y_i = \hat{\alpha} + \hat{\beta_{1i}} + \hat{\mu_i}$$
+**Anotar información sobre residuales**
+
+## Análisis descriptivo de los datos
+
+La distribución de los datos puede revisarse con skim de skimr.
+
+```{r}
+skimr::skim(vdem)
+```
+
+Cuando dos variables son numéricas podemos tener estadísticos de resumen bivariados como el coeficiente de correlación, que va desde los rangos -1 a 1. Donde -1 implica perfecta correlación negativa y 1 perfecta correlación positiva.
+
+Si queremos obtener información de las variables numéricas podemos usar yank.
+
+```{r}
+library(skimr)
+skim(vdem) %>% 
+  yank("numeric") #Sólo me interesan las variables numéricas
+```
+Para una correlación podemos usar ggcorr.
+
+```{r}
+library(ggcorrplot)
+corr_vdem <- vdem %>% 
+  select(2:6,8) %>% 
+  cor(use="pairwise") %>% 
+  round(2)
+
+ggcorrplot(corr_vdem, type = "lower",lab=T, show.legend = F)
+```
+
+Este paso es importante porque es una prueba para evitar multicolinealidad perfecta, es decir, cuando dos variables independientes están altamente correlacionadas. En este caso, v2x_partipdem y v2x_cspart están correlacionadas porque ambas miden la participación y la segunda está contenida en la primera.
+
+Fijarnos en:
+
++ Variación en x y en y, no nos sirven variables que no varian.
+
++ Unidad de medidas de las variables
+
++ Tipo de variables, por lo general utilizamos variables continuas
+
++ Identificar valores NA.
+
+## Gráficos
+
+```{r}
+vdem %>% 
+  ggplot(aes(x = v2x_cspart)) +
+  geom_histogram(bindwidth = 0.5)
+```
+
+```{r}
+vdem %>% 
+  ggplot(aes(e_peedgini)) +
+  geom_histogram(binwidth = 3)
+```
+Scatterplot
+
+```{r}
+vdem %>% 
+  ggplot(mapping = aes(e_peedgini, v2x_cspart)) +
+  geom_point(alpha=.3) +
+  geom_smooth(method = "lm", col="red")
+```
+Una primera observación nos permite observar un tipo de relación negativa. A pesar de que vimos la correlación entre ambas variables y observamos su dispersión, aún no estimamos un modelo. 
+
+Podemos estimar un modelo con lm. En este caso:
+
+```{r}
+modelo1 <- lm(v2x_cspart ~ 1 + e_peedgini, vdem)
+
+class(modelo1)
+```
+
+El modelo que estamos proponiendo es:
+
+$$ParticipaciónOSC_i = \beta_0 + \beta_1DesigualdadEd_i + \mu_i$$
+Podemos ver los coeficientes de nuestro modelo con summary.
+
+```{r}
+summary(modelo1)
+```
+Podemos presentar nuestro modelo con stargazer.
+
+```{r}
+library(stargazer)
+stargazer(modelo1, type = "text")
+```
+**Prefiero ocupar stargazer a screenreg**
+
+La signficancia estadística es el resultado de un test t. Esta prueba indica la distancia estandarizada donde la beta estimada se encuentra en la distribución bajo la hipótesis nula de que $B_1 = 0$. Este estimador tiene una distribución t-Student con grades de libertad iguales a n--1 donde k es el numero de variables independientes del modelo. 
+
+¿Qué significa que el modelo OLS sea el mejor ajuste de la línea de regresión? Bueno, necesitamos las observaciones, utilizemos moderndive para ver el modelo de regresión como una tabla.
+
+```{r}
+library(moderndive)
+estimadores <- get_regression_table(modelo1)
+estimadores_observados <- get_regression_points(modelo1)
+
+estimadores
+estimadores_observados
+
+estimadores_observados[34,]
+```
+
+
+
+
+

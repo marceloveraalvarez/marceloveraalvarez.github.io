@@ -1,0 +1,4 @@
+"0","base <- base %>% "
+"0","  mutate(d_bicam = case_when(v2lgbicam == 0 ~ NA_real_,"
+"0","                             v2lgbicam == 1 ~ 0,"
+"0","                             v2lgbicam == 2 ~ 1))"

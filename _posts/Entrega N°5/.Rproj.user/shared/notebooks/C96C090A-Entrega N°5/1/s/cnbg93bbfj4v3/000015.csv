@@ -1,0 +1,4 @@
+"0","mols_3 <- lm(v2xcl_rol ~ v2x_feduni + d_bicam + v2x_divparctrl + lvaw_garriga+ v2csstruc_2, base)
+"
+"2","Error in eval(predvars, data, env) : object 'd_bicam' not found
+"

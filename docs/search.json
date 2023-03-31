@@ -1,0 +1,12 @@
+{
+  "articles": [
+    {
+      "path": "index.html",
+      "title": "Análisis de Datos Políticos 2023",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2023-03-29T01:38:50-03:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

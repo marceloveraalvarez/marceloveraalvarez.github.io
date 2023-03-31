@@ -1,0 +1,315 @@
+---
+title: "Anexo N°2 - Índice alternativo de Derechos y Libertades con Análisis Factorial"
+description: |
+  Anexo N°2 Medición y Análisis Dimensional de Datos Políticos.
+author:
+  - name: Marcelo Vera Álvarez
+    url: https://marceloveraalvarez.github.io/
+date: 2022-11-24
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introducción
+
+El propósito de este anexo es probar otra medida de derechos individuales y libertades civiles a partir de la base de V-Dem (2022). Esta medida será construída a partir de diferentes indicadores relacionados con los derechos de las personas y se realizará una comparación con el Índice de Libertades y Derechos Individuales (ILDI).
+
+### Base de Datos
+
+Utilizaré la base de V-Dem desarrollada por Coppedge et al. (2022). Me interesan las siguientes variables:
+
+| variable          | descripción
+|:-----------------:|------------------------------------------------------
+| v2cltort          | Protección contra la tortura
+| v2mecenefm        | Censura gubernamental de los medios
+| v2cldiscm         | Libertad de discurso para hombres
+| v2cldiscm         | Libertad de discurso para mujeres
+| v2csreprss        | Represión a Organizaciones Sociedad Civil
+| v2clprptym        | Derechos propiedad de hombres
+| v2clprptyw        | Derechos propiedad de mujeres
+| v2cldmovem        | Libertad de movimiento doméstico hombres
+| v2cldmovew        | Libertad de movimiento doméstico mujeres
+| v2clfmov          | Libertad de movimiento extranjero
+| v2clrelig         | Libertad de religión
+| v2clacjstm        | Acceso a la justicia hombres
+| v2clacjstm        | Acceso a la justicia mujeres
+| v2clacjust        | Igual respeto a libertades civiles de clases sociales
+| v2clsocgrp        | Igual respeto a libertades civiles de grupos sociales
+| v2clgencl         | Igual respeto a libertades civiles de género
+
+```{r}
+library(tidyverse)
+
+vd <- read_csv("v-dem.csv") %>% 
+  select(country_name, 
+         COWcode, 
+         year, 
+         v2cltort,
+         v2mecenefm,
+         v2cldiscm,
+         v2cldiscw,
+         v2csreprss,
+         v2clprptym, 
+         v2clprptyw,
+         v2cldmovem, 
+         v2cldmovew,
+         v2clfmove, 
+         v2clrelig, 
+         v2clacjstm,
+         v2clacjstw,
+         v2clacjust, 
+         v2clsocgrp,  
+         v2clgencl,
+         v2xcl_rol)
+
+vd <- vd %>% 
+  filter(year >= 1900)
+```
+
+### ANÁLISIS DE CORRELACIÓN
+
+Crearé una base que contenga sólo las variables que utilizaré para la construcción de una medida alternativa y analizaré la correlación existente en ellas.
+
+```{r}
+library(corrplot)
+vd2 <- vd[4:19]
+mtz <- cor(vd2, use = "pairwise.complete.obs") %>% 
+  round(., 2)
+corrplot(mtz,
+         method = "shade",
+         shade.col = NA,
+         tl.col = "black",
+         tl.srt = 35,
+        addCoef.col = "black",
+        order = "AOE",
+        number.cex = 0.5)
+```
+Las relaciones entre nuestras vairbles son muy altas, las correlaciones más bajas son de 0.4. Para estar seguros de que nuestra matriz es factorizable la someteremos a una prueba de esfericidad de Barltlett para probar la relación entre las variables y la población.
+
+```{r}
+library(psych)
+
+cortest.bartlett(mtz)
+```
+
+El valor p es muy bajo, la hipótesis de falta de relación se descarta. Para ver si es apropiado aplicar análisis factorial aplicamos una prueba de Kaiser-Meyer-Olkin (KMO).
+
+```{r}
+KMO(mtz)
+```
+
+Los valores de la prueba KMO son muy altos, por lo que concluímos que la matriz es apropiada. Ahora comenzaremos el análisis factorial.
+
+### ANÁLISIS FACTORIAL
+
+Emplearé el método de máxima verosimilitud y de ejes principales. Pero antes observaremos la distribución de valores NA de la base.
+
+```{r}
+library(VIM)
+aggr(vd2,numbers = T, sortVar = T)
+```
+
+Las variables v2clgencl y v2mecenefm tienen la mayor cantidad de datos perdidos. Una mide el igual respeto a libertades civiles de género y la otra la censura gubernamental de los medios. Tomo la decisión de imputar estos datos mediante método de regresión estocástica preservando la correlación y pesos de los datos (Marin, 2022).
+
+```{r}
+
+library(mice)
+columnas <- c("v2clgencl","v2mecenefm")
+imput <- mice(vd2[,names(vd2) %in% columnas],m = 1,
+  maxit = 1, method = "norm.nob",seed = 101,print=F)
+completo <- complete(imput)
+
+vd3 <- vd2
+vd3$v2clgencl <- completo$v2clgencl
+vd3$v2mecenefm <- completo$v2clgencl
+
+library(skimr)
+skim(vd3)
+```
+
+El número de valores perdidos en las demás variables es muy bajo. Tomo la decisión de omitir el resto de datos NA, pues apenas pierdo 10 observaciones.
+
+```{r}
+vd3 <- na.omit(vd3)
+```
+
+Tiendo a pensar en los derechos y libertades acorde al esquema de ciudadanía de Marshall (1950), es decir: derechos civiles, políticos y sociales. En base a esta teoría probaré con un análisis factorial con 3 factores y la técnica varimax que facilita la interpretación de los factores:
+
+**Método Eje Principal**
+```{r}
+pa <- fa(r = vd2, # Puede ser una base de datos o una matriz de datos.
+         nfactors = 3,
+         rotate = "varimax", # Suele ser la más utilizada
+         fm = "paf", 
+         residuals = T)
+
+pa
+```
+
+**Método de Máxima Verosimilitud**
+
+```{r}
+mv <- fa(r = vd2, # Puede ser una base de datos o una matriz de datos.
+         nfactors = 3,
+         rotate = "varimax", # Suele ser la más utilizada
+         fm = "mle", 
+         residuals = T)
+
+mv
+```
+
+El método de eje principal explica un porcentaje de la varianza cumulativa mayor que el método de verosimilitud para nuestro conjunto de datos (0.78 v. 0.76). El método revela que 3 factores son suficientes y el ajuste del modelo funciona. Procederemos a analizar los distintos factores a continuación:
+
+```{r}
+pa
+```
+
+El factor 1 explica un 32% de la varianza. Está compuesto, principalmente, por la represión a las organizaciones de la sociedad civil (v2csreprss), la censura gubernamental a los medios de prensa (v2mecenefm), la protección contra la tortura (v2cltort) y la libertad de discurso de los hombres y mujeres (v2cldiscm y v2cldiscw), entre otros. Estos son derechos políticos clásicos.
+
+El factor 2 explica un 23% de la varianza. Se compone principalmente de la igualdad de respeto por los derechos civiles de las clases sociales, los grupos sociales y entre género. Esta dimensión captura, por tanto, la igualdad de derechos.
+
+El factor 3 explica un 23% de la varianza. Se compone, principalmente, de libertad de movimiento interno de hombres y mujeres (v2cldmovem y v2cldmovew) y derechos de propiedad de hombres y mujeres (v2clprptym y v2clprptyw). Por ende, clasifico este factor como derechos civiles.
+
+Un diagrama de árbol confirma nuestras intuiciones:
+
+```{r}
+fa.diagram(pa)
+```
+
+### CONSTRUCCIÓN DE UN ÍNDICE COMPUESTO
+
+En base al análisis factorial construiré un índice compuesto en base a derechos políticos, igualdad de derechos y derechos civiles:
+
+```{r}
+
+vd3 <- vd
+
+vd3$v2clgencl <- completo$v2clgencl
+vd3$v2mecenefm <- completo$v2clgencl
+
+vd3 <- vd3 %>% 
+  mutate(der_politicos = v2mecenefm * 0.79 + v2cltort* 0.76 + v2cldiscm* 0.79 + v2cldiscw * 0.72 + v2csreprss*0.8,
+         igualdad_derechos = v2clacjust * 0.86 + v2clsocgrp * 0.68 + v2clgencl* 0.62,
+         der_civiles = v2clprptym*72 + v2clprptyw*0.62 +  v2cldmovem*0.71 + v2cldmovew * 0.62)
+
+vd3 <- vd3 %>% 
+  mutate(der_politicos = scales::rescale(der_politicos),
+         igualdad_derechos = scales::rescale(igualdad_derechos),
+         der_civiles = scales::rescale(der_civiles))
+
+vd3 <- vd3 %>% 
+  mutate(ind_derechos = der_politicos*0.32 + igualdad_derechos*0.23 + der_civiles*0.23)
+
+vd3 <- vd3 %>% 
+  mutate(ind_derechos = round(ind_derechos, 2))
+
+```
+
+### COMPARACIÓN ILDI
+
+El análisis de correlación revela altos grados de similitud entre los índices.
+
+```{r}
+cor(vd3$v2xcl_rol, vd3$ind_derechos, use = "complete.obs")
+```
+
+Esta relación es casi perfectamente lineal:
+
+```{r}
+vd3 %>% 
+  ggplot(mapping = aes(ind_derechos, v2xcl_rol)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm", col="darkred") +
+  labs(title = "Gráfico 1. Comparación entre IDLI e Índice Compuesto",
+       x = "Índice Derechos a partir de Análisis Factorial",
+       y = "Índice Derechos y Libertades Individuales V-DEM",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).") +
+  theme_bw()
+```
+Probaré si esta relación se mantiene con distintos filtros:
+
+**Escenario A: Sólo Democracias**
+
+```{r}
+df_1 <- read.csv("df_1.csv")
+
+vd4 <- vd3 %>% 
+  rename(cowcode = COWcode)
+
+vd4 <- vd4 %>% 
+  select(cowcode, year, ind_derechos)
+
+vd4 <- left_join(df_1, vd4, by = c("cowcode","year"))
+
+democracias <- vd4 %>% 
+  filter(v2x_polyarchy > 0.65)
+
+cor(democracias$v2xcl_rol, democracias$ind_derechos)
+```
+
+La relación es un poco más débil (0.85), pero se mantiene:
+
+```{r}
+democracias %>% 
+  ggplot(mapping = aes(ind_derechos, v2xcl_rol)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm", col="darkred") +
+  labs(title = "Gráfico 2. Comparación entre IDLI e Índice Compuesto",
+       subtitle = "Escenario A: Sólo democracias",
+       x = "Índice Derechos a partir de Análisis Factorial",
+       y = "Índice Derechos y Libertades Individuales V-DEM",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).") +
+  theme_bw()
+```
+
+
+**Escenario B: Datos Longitudinales de Democracias**
+
+Al colapsar las democracias en el tiempo y comparar se obtiene que:
+
+```{r}
+democracias_b <- democracias %>% 
+  filter(v2x_polyarchy > 0.65) %>% 
+  group_by(country_name) %>% 
+  summarise(ind_derechos = mean(ind_derechos, na.rm = T),
+            v2xcl_rol = mean(v2xcl_rol, na.rm = T))
+
+cor(democracias_b$v2xcl_rol, democracias_b$ind_derechos)
+```
+La relelación es incluso más fuerte que en el escenario A.
+
+```{r}
+democracias_b %>% 
+  ggplot(mapping = aes(ind_derechos, v2xcl_rol)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm", col="darkred") +
+  labs(title = "Gráfico 3. Comparación entre IDLI e Índice Compuesto",
+       subtitle = "Escenario B: Datos longitudinales de democracias",
+       x = "Índice Derechos a partir de Análisis Factorial",
+       y = "Índice Derechos y Libertades Individuales V-DEM",
+       caption = "Fuente: Elaboración propia en base a V-Dem (2022).") +
+  theme_bw()
+```
+
+### CONCLUSIONES
+
+Aunque el Índice de Derechos creado a partir del Análisis Factorial tiende a arrojar resulados menores a los del ILDI de V-Dem, existe una correlación significativa entre ellos. Por tanto, decidimos utilizar los datos originales de V-Dem para los estudios.
+
+#### REFERENCIAS BIBLIOGRÁFICAS
+
++ Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Ryden, Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning, Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig, Steven Wilson and Daniel Ziblatt. 2022. VDem [Country–Year/Country–Date] Dataset v12” Varieties of Democracy (V-Dem) Project. https://doi.org/10.23696/vdemds22.
+
++ Marín, Y. (2022). Imputación de Datos [RPubs]. Recuperado de: https://rpubs.com/ydmarinb/429757
+
++ Marshall, T. H. (1950). Citizenship and Social Class. Cambridge University Press.
+
+
+
+
